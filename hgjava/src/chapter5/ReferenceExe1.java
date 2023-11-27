@@ -1,14 +1,14 @@
 package chapter5;
 
 //복합적인 형태의 데이터 구조 
-class Friend{
-	
-	String name; //필드
-	int age; //필드
-	double height; //필드 
-	
-	
-}
+//class Friend{
+//	
+//	String name; //필드
+//	int age; //필드
+//	double height; //필드 
+//	
+//	
+//}
 public class ReferenceExe1 {
 
 	public static void main(String[] args) {
