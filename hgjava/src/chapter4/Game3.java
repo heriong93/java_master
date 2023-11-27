@@ -22,8 +22,7 @@ public class Game3 {
 			}
 			
 		}
-		//아무거나 추가하는중중중중중중중ㅈ웆우
-		for(jsfhjsfjsf;)
+		
 		
 	}//end main
 
