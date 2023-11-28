@@ -3,7 +3,7 @@ package chapter5;
 public class Student {
 	String name;
 	int score;
-	String gender; //³², ¿© ±¸ºĞ
+	String gender; //Â³Â², Â¿Â© Â±Â¸ÂºÃ
 	
 	
 

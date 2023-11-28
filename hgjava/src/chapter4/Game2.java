@@ -5,22 +5,22 @@ import java.util.Scanner;
 public class Game2 {
 
 	public static void main(String[] args) {
-		//µ¿Àü ±³È¯
+		//ë™ì „ êµí™˜
 		Scanner sc = new Scanner(System.in);
-		System.out.print("##±³È¯ÇÒ ±İ¾×:");
+		System.out.print("##êµí™˜í•  ê¸ˆì•¡:");
 		int money = sc.nextInt();
 		
 		
-		System.out.println("500¿ø Â¥¸®:"+money/500);
+		System.out.println("500ì› ì§œë¦¬:"+money/500);
 		int left = money % 500;
-		System.out.println("100¿ø Â¥¸®:"+left/100);
+		System.out.println("100ì› ì§œë¦¬:"+left/100);
 		 left %= 100;
-		 System.out.println("50¿ø Â¥¸®:"+left/50);
+		 System.out.println("50ì› ì§œë¦¬:"+left/50);
 		 left %= 50;
-		 System.out.println("10¿ø Â¥¸®:"+left/10);
+		 System.out.println("10ì› ì§œë¦¬:"+left/10);
 		 left %= 10;
-		 System.out.println("±³È¯ ±İ¾×:"+(money-left));
-		 System.out.println("³²Àº ±İ¾×:"+left);
+		 System.out.println("êµí™˜ ê¸ˆì•¡:"+(money-left));
+		 System.out.println("ë‚¨ì€ ê¸ˆì•¡:"+left);
 		 
 		
 

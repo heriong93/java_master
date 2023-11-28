@@ -5,15 +5,15 @@ import java.util.*;
 public class Exam160 {
 
 	public static void main(String[] args) {
-		//2¹ø ¹®Á¦ 
+		//2ë²ˆ ë¬¸ì œ 
 		int three = 0;
 		for(int i = 1; i<=100; i++){
 			if(i % 3 ==0) {
 				three += i;
 		}
-		}System.out.println("3¹è¼öÀÇ ÃÑÇÕÀº:"+ three);
+		}System.out.println("3ë°°ìˆ˜ì˜ ì´í•©ì€:"+ three);
 		
-		//3¹ø ¹®Á¦ 
+		//3ë²ˆ ë¬¸ì œ 
 		while(true) {
 			int nun1 = (int)(Math.random()*6)+1;
 			int nun2 = (int)(Math.random()*6)+1;
@@ -21,13 +21,13 @@ public class Exam160 {
 			if(nun1+nun2 == 5) {
 				break;
 			}
-		}System.out.println("Á¾·á");
+		}System.out.println("ì¢…ë£Œ");
 		
 		
-		//¹®Á¦ 4
+		//ë¬¸ì œ 4
 		
-		//x: 1~10±îÁö ¹Ýº¹
-		//y: 1~10±îÁö ¹Ýº¹
+		//x: 1~10ê¹Œì§€ ë°˜ë³µ
+		//y: 1~10ê¹Œì§€ ë°˜ë³µ
 		int x = 1;
 		int y = 1;
 		for(x = 1; x <=10;x++) {
@@ -35,11 +35,11 @@ public class Exam160 {
 				if((4*x) + (5*y) == 60) {
 					System.out.println("("+ x + "," + y + ")");
 				}
-				//4*x +5*y = 60ÀÎ °ª Ã£±â 
+				//4*x +5*y = 60ì¸ ê°’ ì°¾ê¸° 
 			}
 		}
 		
-		//5¹ø ¹®Á¦ 
+		//5ë²ˆ ë¬¸ì œ 
 		
 //				for(int i = 1; i<5;i++) {
 //					for(int j = 1; j<5; j++) {
@@ -51,7 +51,7 @@ public class Exam160 {
 //				}
 //		
 		
-		//7¹ø ¹®Á¦ 
+		//7ë²ˆ ë¬¸ì œ 
 		
 		boolean run = true;
 		int balance = 0;
@@ -60,32 +60,32 @@ public class Exam160 {
 		
 		while(run) {
 			System.out.println("-----------------------");
-			System.out.println("1.¿¹±Ý| 2.Ãâ±Ý | 3.ÀÜ°í | 4.Á¾·á");
+			System.out.println("1.ì˜ˆê¸ˆ| 2.ì¶œê¸ˆ | 3.ìž”ê³  | 4.ì¢…ë£Œ");
 			System.out.println("-----------------------");
-			System.out.println("¼±ÅÃ>");
+			System.out.println("ì„ íƒ>");
 			int num = scanner.nextInt();
 			
 			switch(num) {
-			case 1: System.out.println("¿¹±Ý¾×:");
+			case 1: System.out.println("ì˜ˆê¸ˆì•¡:");
 			int deposit = scanner.nextInt();
 			balance += deposit; 
 			break;
 			
-			case 2: System.out.println("Ãâ±Ý¾×:");
+			case 2: System.out.println("ì¶œê¸ˆì•¡:");
 			int withdraw = scanner.nextInt();
 			if(balance < withdraw) {
-				System.out.println("ÀÜ°í°¡ ºÎÁ·ÇÕ´Ï´Ù");
+				System.out.println("ìž”ê³ ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤");
 			}else {
 				balance -= withdraw;
 			}break;
 			
-			case 3: System.out.println("ÀÜ°í:");
+			case 3: System.out.println("ìž”ê³ :");
 			System.out.println(balance);break;
 			
 			case 4: run = false; 
 			}
 		}
-		System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("í”„ë¡œê·¸ëž¨ ì¢…ë£Œ");
 	}//end main
 
 } //end class

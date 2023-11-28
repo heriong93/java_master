@@ -1,21 +1,23 @@
 package chapter5;
 
-//º¹ÇÕÀûÀÎ ÇüÅÂÀÇ µ¥ÀÌÅÍ ±¸Á¶ 
-//class Friend{
-//	
-//	String name; //ÇÊµå
-//	int age; //ÇÊµå
-//	double height; //ÇÊµå 
-//	
-//	
-//}
+
+
+//ë³µí•©ì ì¸ í˜•íƒœì˜ ë°ì´í„° êµ¬ì¡° 
+class Friend{
+	
+	String name; //í•„ë“œ
+	int age; //í•„ë“œ
+	double height; //í•„ë“œ 
+	
+	
+}
 public class ReferenceExe1 {
 
 	public static void main(String[] args) {
 		
-		//ÂüÁ¶º¯¼ö: ½ÇÁ¦ °ªÀ» ´ã´Â°ÍÀÌ ¾Æ´Ï¶ó -> ½ÇÁ¦ °ªÀÇ ÁÖ¼Ò¸¦ ´ã°í ÀÖ´Ù.
-		Friend myFriend = new Friend(); //new => °´Ã¼ »ý¼º.
-		myFriend.name = "±èÃ¶¼ö";
+		//ì°¸ì¡°ë³€ìˆ˜: ì‹¤ì œ ê°’ì„ ë‹´ëŠ”ê²ƒì´ ì•„ë‹ˆë¼ -> ì‹¤ì œ ê°’ì˜ ì£¼ì†Œë¥¼ ë‹´ê³  ìžˆë‹¤.
+		Friend myFriend = new Friend(); //new => ê°ì²´ ìƒì„±.
+		myFriend.name = "ê¹€ì² ìˆ˜";
 		myFriend.age = 20 ;
 		myFriend.height = 178.3;
 		
@@ -23,38 +25,38 @@ public class ReferenceExe1 {
 //		System.out.println(ourFriend.name);
 //		System.out.println(ourFriend.age);
 //		System.out.println(ourFriend.height);
-//		myFriend.name = "È«±æµ¿";
+//		myFriend.name = "í™ê¸¸ë™";
 		
-		Friend yourFriend = new Friend(); //new -> °´Ã¼ »ý¼º
-		yourFriend.name = "±èÃ¶¼ö";
+		Friend yourFriend = new Friend(); //new -> ê°ì²´ ìƒì„±
+		yourFriend.name = "ê¹€ì² ìˆ˜";
 		yourFriend.age = 20;
 		yourFriend.height = 178.3;
-		System.out.println(myFriend == yourFriend); //ÁÖ¼Ò°ª ºñ±³: false. °ªÀÌ ¾ø±â ¶§¹® 
+		System.out.println(myFriend == yourFriend); //ì£¼ì†Œê°’ ë¹„êµ: false. ê°’ì´ ì—†ê¸° ë•Œë¬¸ 
 		
 		yourFriend = null;
 		System.out.println(myFriend.name);
 		try {
 			System.out.println(yourFriend.name);
 		}catch(Exception e) {
-			System.out.println("null°ªÀ» ÂüÁ¶ÇÕ´Ï´Ù");
+			System.out.println("nullê°’ì„ ì°¸ì¡°í•©ë‹ˆë‹¤");
 		}
 		
-		//±âº» Å¸ÀÔ
+		//ê¸°ë³¸ íƒ€ìž…
 		int a = 10;
 		int b = a;
 		
 		a = 20;
 		
 		
-		//ÂüÁ¶ Å¸ÀÔÀº : ÁÖ¼Ò °ªÀ» º¯¼ö¿¡ ÀúÀå. 
-		String name = "½Å¿ë±Ç";  //23dbdae34334 16Áø¼öÀÇ ÀÌ¸§À¸·Î °ªÀ» °¡Áö°í ÀÖÀ½-> ½Å¿ë±ÇÀÌ¶ó´Â °´Ã¼¿¡ °ªÀ» ÀúÀåÇØ³õÀ½
-		String hobby = "µ¶¼­";
+		//ì°¸ì¡° íƒ€ìž…ì€ : ì£¼ì†Œ ê°’ì„ ë³€ìˆ˜ì— ì €ìž¥. 
+		String name = "ì‹ ìš©ê¶Œ";  //23dbdae34334 16ì§„ìˆ˜ì˜ ì´ë¦„ìœ¼ë¡œ ê°’ì„ ê°€ì§€ê³  ìžˆìŒ-> ì‹ ìš©ê¶Œì´ë¼ëŠ” ê°ì²´ì— ê°’ì„ ì €ìž¥í•´ë†“ìŒ
+		String hobby = "ë…ì„œ";
 		
-		String name1 = "½Å¿ë±Ç";
+		String name1 = "ì‹ ìš©ê¶Œ";
 		System.out.println("name"+name);
 		System.out.println("name1"+name1);
 		
-		System.out.println(name == name1); // == -> equals¸Þ¼Òµå È°¿ëÇØ¾ßÇÑ´Ù.
+		System.out.println(name == name1); // == -> equalsë©”ì†Œë“œ í™œìš©í•´ì•¼í•œë‹¤.
 		
 		
 		

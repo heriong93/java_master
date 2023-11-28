@@ -2,9 +2,9 @@ package chapter5;
 
 public class ArrayExe3 {
 	public static void main(String[] args) {
-		String[] nameAry = {"È«±æµ¿", "±è±æµ¿","¹Ú±æµ¿","È«±æµ¿","¿Ë±æµ¿"};
+		String[] nameAry = {"í™ê¸¸ë™", "ê¹€ê¸¸ë™","ë°•ê¸¸ë™","í™ê¸¸ë™","ì˜¹ê¸¸ë™"};
 		
-		String search = "È«±æµ¿";
+		String search = "í™ê¸¸ë™";
 		int count = 0;
 		
 		for(String names : nameAry) {
@@ -12,7 +12,7 @@ public class ArrayExe3 {
 				count ++;
 			}
 		}
-		System.out.println(search+"Àº ÃÑ"+count + "¸íÀÔ´Ï´Ù");
+		System.out.println(search+"ì€ ì´"+count + "ëª…ì…ë‹ˆë‹¤");
 		
 		int[] scores = {88,68,72,89,92,70};
 		int maxScore = 0; 
@@ -21,7 +21,7 @@ public class ArrayExe3 {
 			if(eachScore > maxScore) {
 				maxScore = eachScore;
 			}
-		}System.out.println("ÃÖ°í Á¡¼ö´Â"+maxScore+"ÀÔ´Ï´Ù");
+		}System.out.println("ìµœê³  ì ìˆ˜ëŠ”"+maxScore+"ì…ë‹ˆë‹¤");
 		
 		
 	}//end main

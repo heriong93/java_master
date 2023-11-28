@@ -1,4 +1,4 @@
-package chapter5;
+package todo1127;
 
 import java.util.Scanner;
 
@@ -18,32 +18,32 @@ public class FriendApp {
 		
 		while(run) {
 			System.out.println("=============================");
-			System.out.println("1.Ä£±¸ ¼ö 2.ÀÔ·Â 3.¸ñ·Ï 4.¼öÁ¤ 5.Á¾·á");
+			System.out.println("1.ì¹œêµ¬ ìˆ˜ 2.ì…ë ¥ 3.ëª©ë¡ 4.ìˆ˜ì • 5.ì¢…ë£Œ");
 			System.out.println("=============================");
 			int choice = sc.nextInt();
 			sc.nextLine();
 			
 			switch(choice) {
 			case 1:
-				System.out.println("Ä£±¸ ¼ö ÀÔ·Â:");
+				System.out.println("ì¹œêµ¬ ìˆ˜ ì…ë ¥:");
 			friendsNum = Integer.parseInt(sc.nextLine()); 
 			friends = new Friend [friendsNum];
 			break;
 			case 2: 
 				for(int i = 0; i < friends.length; i++) {
 					Friend fr = new Friend();
-					System.out.println("Ä£±¸ ÀÌ¸§ ÀÔ·Â:");
+					System.out.println("ì¹œêµ¬ ì´ë¦„ ì…ë ¥:");
 					fr.name = sc.nextLine();
-					System.out.println("ÀüÈ­¹øÈ£ ÀÔ·Â:");
+					System.out.println("ì „í™”ë²ˆí˜¸ ì…ë ¥:");
 					fr.phoneNum = sc.nextLine();
-					System.out.println("Ç÷¾×Çü ÀÔ·Â:");
+					System.out.println("í˜ˆì•¡í˜• ì…ë ¥:");
 					fr.bloodType = sc.nextLine();
 					friends[i] = fr; 
 						
 			}break;
 			case 3:
 				
-				System.out.println("Á¶È¸ÇÒ ÀÌ¸§:");
+				System.out.println("ì¡°íšŒí•  ì´ë¦„:");
 				String searchName = sc.nextLine();
 				for(String name :friends.name) {
 					if(name.equals(searchName){

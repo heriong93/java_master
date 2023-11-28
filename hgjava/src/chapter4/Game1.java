@@ -5,17 +5,17 @@ import java.util.*;
 public class Game1 {
 
 	public static void main(String[] args) {
-		//À±³â °è»ê ÇÁ·Î±×·¥ 
+		//ìœ¤ë…„ ê³„ì‚° í”„ë¡œê·¸ë¨ 
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("##³âµµ ÀÔ·Â:");
+		System.out.println("##ë…„ë„ ì…ë ¥:");
 		int year = scanner.nextInt();
 		if(year % 4 == 0 && year % 100 != 0) {
 		if(year % 400 == 0) {
 		}
-		System.out.println(year+"³âÀº À±³âÀÔ´Ï´Ù");
+		System.out.println(year+"ë…„ì€ ìœ¤ë…„ì…ë‹ˆë‹¤");
 		}else {
-			System.out.println(year+"³âÀº Æò³âÀÔ´Ï´Ù");
+			System.out.println(year+"ë…„ì€ í‰ë…„ì…ë‹ˆë‹¤");
 		}
 	}//end main
 

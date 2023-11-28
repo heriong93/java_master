@@ -11,18 +11,18 @@ public class StudentApp {
 		String[] names = null;
 		boolean run = true;
 		while(run) {
-			System.out.println("1.ÇĞ»ı¼ö 2.Á¡¼öÀÔ·Â 3.¸ñ·ÏÃâ·Â 4.ºĞ¼®(ÃÖ°íÁ¡¼ö,Æò±Õ) 5.Á¾·á");
+			System.out.println("1.í•™ìƒìˆ˜ 2.ì ìˆ˜ì…ë ¥ 3.ëª©ë¡ì¶œë ¥ 4.ë¶„ì„(ìµœê³ ì ìˆ˜,í‰ê· ) 5.ì¢…ë£Œ");
 			int menu = sc.nextInt();  //3. Enter 
 			sc.nextLine();
 			
 			switch(menu) {
-			case 1: System.out.println("ÇĞ»ı ¼ö ÀÔ·Â:");
+			case 1: System.out.println("í•™ìƒ ìˆ˜ ì…ë ¥:");
 			stuNum = sc.nextInt();
 			scores = new int [stuNum];
 			names = new String[stuNum];
 			break;
-			case 2: System.out.println("Á¡¼ö ÀÔ·Â:");
-			//for ¹İº¹
+			case 2: System.out.println("ì ìˆ˜ ì…ë ¥:");
+			//for ë°˜ë³µ
 			for (int i = 0; i < scores.length; i++) {
 				System.out.println("names [" + i + "]");
 				names[i] = sc.nextLine();
@@ -31,12 +31,12 @@ public class StudentApp {
 				sc.nextLine();
 			}
 			break;
-			case 3: System.out.println("¸ñ·Ï Ãâ·Â:");
+			case 3: System.out.println("ëª©ë¡ ì¶œë ¥:");
 			for (int i = 0; i < scores.length; i++) {
-				System.out.println("ÀÌ¸§Àº" + names[i] +"Á¡¼ö´Â"+scores[i]+"\n");
+				System.out.println("ì´ë¦„ì€" + names[i] +"ì ìˆ˜ëŠ”"+scores[i]+"\n");
 			}
 			break;
-			case 4: System.out.println("ºĞ¼®:");
+			case 4: System.out.println("ë¶„ì„:");
 			int maxNum = 0;
 			double avg = 0; 
 			int sumAvg = 0;
@@ -51,12 +51,12 @@ public class StudentApp {
 				}
 			}
 				avg = sumAvg*1.0 / scores.length;
-				System.out.println("ÇĞ»ıÀÌ¸§:"+maxName);
-			System.out.println("max°ª:"+ maxNum);
-			System.out.println("Æò±Õ°ª:"+ avg);
+				System.out.println("í•™ìƒì´ë¦„:"+maxName);
+			System.out.println("maxê°’:"+ maxNum);
+			System.out.println("í‰ê· ê°’:"+ avg);
 				
 				break;
-			case 5: System.out.println("Á¾·á");
+			case 5: System.out.println("ì¢…ë£Œ");
 			run = false; break;
 			
 			}// end of switch 

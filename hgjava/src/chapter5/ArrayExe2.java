@@ -4,10 +4,10 @@ public class ArrayExe2 {
 
 	public static void main(String[] args) {
 		
-		//Á¤¼ö¸¦ ´ãÀ» ¼ö ÀÖ´Â ¹è¿­À» »ı¼º(Å©±â´Â 10°³ÀÇ Á¤¼ö¸¦ ÀúÀå).
+		//ì •ìˆ˜ë¥¼ ë‹´ì„ ìˆ˜ ìˆëŠ” ë°°ì—´ì„ ìƒì„±(í¬ê¸°ëŠ” 10ê°œì˜ ì •ìˆ˜ë¥¼ ì €ì¥).
 		int [] intAry = new int [10];
-		//º¯¼ö ÀÌ¸§Àº intAry => 10~100 ´ã¾Æ ÀúÀå 
-		for(int i = 0 ; i < intAry.length; i++) {  //´Ù ÀûÀ¸¸é ¾î·Á¿ì´Ï ÀÌ·¸°Ô for ¹® »ç¿ë
+		//ë³€ìˆ˜ ì´ë¦„ì€ intAry => 10~100 ë‹´ì•„ ì €ì¥ 
+		for(int i = 0 ; i < intAry.length; i++) {  //ë‹¤ ì ìœ¼ë©´ ì–´ë ¤ìš°ë‹ˆ ì´ë ‡ê²Œ for ë¬¸ ì‚¬ìš©
 			intAry[i] = (i + 1) *10; 
 		}
 //		intAry[0] = 10;
@@ -21,21 +21,21 @@ public class ArrayExe2 {
 //		intAry[8] = 90;
 //		intAry[9] = 100;
 		
-		//Ãâ·Â
+		//ì¶œë ¥
 		
-		int sum = 0;    //50º¸´Ù Å« ¼ö¸¦ ÀúÀå
+		int sum = 0;    //50ë³´ë‹¤ í° ìˆ˜ë¥¼ ì €ì¥
 		double avg = 0;
 		int count = 0;
 		for (int num : intAry) {
-			System.out.println(num);         //´Ù¸¥ ¹æ¹ı
+			System.out.println(num);         //ë‹¤ë¥¸ ë°©ë²•
 			if(num >50) {
 				sum += num;
-				count ++;   //50º¸´Ù Å« ¼öÀÇ Æò±ÕÀ» ±¸ÇÏ±â À§ÇØ 50ÀÌ ³ÑÀ»¶§¸¶´Ù 1++Áõ°¡ 
+				count ++;   //50ë³´ë‹¤ í° ìˆ˜ì˜ í‰ê· ì„ êµ¬í•˜ê¸° ìœ„í•´ 50ì´ ë„˜ì„ë•Œë§ˆë‹¤ 1++ì¦ê°€ 
 			}
 		}
 		avg = sum / count;
-		System.out.println("50º¸´Ù Å« ¼öÀÇ ÇÕ°è"+ sum);
-		System.out.println("50º¸´Ù Å« ¼öÀÇ Æò±Õ"+ (avg));  
+		System.out.println("50ë³´ë‹¤ í° ìˆ˜ì˜ í•©ê³„"+ sum);
+		System.out.println("50ë³´ë‹¤ í° ìˆ˜ì˜ í‰ê· "+ (avg));  
 			
 ////		for(int i = 0; i <intAry.length; i++) {
 ////			System.out.println(intAry[i]);

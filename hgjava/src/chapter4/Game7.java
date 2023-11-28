@@ -3,31 +3,31 @@ package chapter4;
 public class Game7 {
 
 	public static void main(String[] args) {
-		//7¹ø °ÔÀÓ =  3,6,9°ÔÀÓ
-		//1~50 : 369°ÔÀÓ
+		//7ë²ˆ ê²Œì„ =  3,6,9ê²Œì„
+		//1~50 : 369ê²Œì„
 		
-		//3,6,9 °¹¼ö Ã¼Å© º¯¼ö
+		//3,6,9 ê°¯ìˆ˜ ì²´í¬ ë³€ìˆ˜
 		int count = 0;
 		
-		//¼ıÀÚ 1~50 ¹İº¹¹® 
+		//ìˆ«ì 1~50 ë°˜ë³µë¬¸ 
 		for(int i = 1; i<=50; i++) {
 			count = 0;
-			//ÀÏÀÇ ÀÚ¸®¿¡ 3,6,9 ÀÖ´ÂÁö °¹¼ö¸¦ Ã¼Å© 
+			//ì¼ì˜ ìë¦¬ì— 3,6,9 ìˆëŠ”ì§€ ê°¯ìˆ˜ë¥¼ ì²´í¬ 
 		if( i % 10 == 3 || i % 10 == 6 || i % 10 == 9) {
 				count ++;
 			}
 			int ten = (int)(i/10);
-			//½ÊÀÇ ÀÚ¸®¿¡ 3,6,9 ÀÖ´ÂÁö °¹¼ö¸¦ Ã¼Å© 
+			//ì‹­ì˜ ìë¦¬ì— 3,6,9 ìˆëŠ”ì§€ ê°¯ìˆ˜ë¥¼ ì²´í¬ 
 			if(ten == 3 || ten == 6 || ten == 9){
 				count ++;
 			}
 			switch(count) {
-			//°¹¼ö°¡ 0 -> ¼ıÀÚ
+			//ê°¯ìˆ˜ê°€ 0 -> ìˆ«ì
 			case 0:System.out.print(i+"\t");break;
-			//°¹¼ö°¡ 1 -> ¢¾
-			case 1:System.out.print("¢¾\t"); break;
-			//°¹¼ö°¡ 2 -> ¢¾¢¾
-			case 2:System.out.print("¢¾¢¾\t");
+			//ê°¯ìˆ˜ê°€ 1 -> â™¥
+			case 1:System.out.print("â™¥\t"); break;
+			//ê°¯ìˆ˜ê°€ 2 -> â™¥â™¥
+			case 2:System.out.print("â™¥â™¥\t");
 			}
 			if(i%10 == 0) {
 				System.out.println();

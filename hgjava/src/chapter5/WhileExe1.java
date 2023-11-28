@@ -5,17 +5,17 @@ import java.util.Scanner;
 public class WhileExe1 {
 
 	public static void main(String[] args) {
-		//for : ¹İº¹È½¼ö°¡ Á¤ÇØÁ® ÀÖ´Â °æ¿ì
+		//for : ë°˜ë³µíšŸìˆ˜ê°€ ì •í•´ì ¸ ìˆëŠ” ê²½ìš°
 		
-		//while: Á¶°ÇÀ» ¸¸Á·ÇÏ´Â µ¿¾È ¹İº¹
+		//while: ì¡°ê±´ì„ ë§Œì¡±í•˜ëŠ” ë™ì•ˆ ë°˜ë³µ
 		Scanner sc = new Scanner(System.in);
 		while(true) {
-			System.out.println("¹®ÀÚ°ªÀ» ÀÔ·ÂÇÏ¼¼¿ä");
+			System.out.println("ë¬¸ìê°’ì„ ì…ë ¥í•˜ì„¸ìš”");
 			String txt = sc.nextLine();
 			if(txt.equals("quit")){
-				System.out.println("Á¾·áÇÕ´Ï´Ù"); break;
+				System.out.println("ì¢…ë£Œí•©ë‹ˆë‹¤"); break;
 			}
-			System.out.println("ÀÔ·Â°ªÀº "+txt);
+			System.out.println("ì…ë ¥ê°’ì€ "+txt);
 		}
 		System.out.println("end of program");
 	sc.close();	

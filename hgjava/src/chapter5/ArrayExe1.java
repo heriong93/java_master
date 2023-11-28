@@ -1,33 +1,35 @@
 package chapter5;
 
-public class ArrayExe1 {
 
-	public static void main(String[] args) {
-		int a = 10;
-		int[] ary = {10,20,33}; //¼±¾ðÇÏ¸é¼­ ÃÊ±â °ª Á¤ÇÏ´Â ¹æ¹ý
-		//int sum = ary[0] + ary[1]+ary[2]; //ÀÎµ¦½º °ªÀ¸·Î ºÒ·¯¿À±â 
-		int sum = 0;
-		for(int i = 0; i< ary.length; i++) {    //°ªÀÌ ¿©·Á°³¸é for¹®À¸·Î ¹Ýº¹½ÃÄÑ µ¹¸®´Â°Ô ÆíÇÔ ary.length ¸¸Å­ µ¹·Á¶ó
-			sum = sum + ary[i];
-		}
-		System.out.println("ÇÕ°è´Â"+sum+"ÀÔ´Ï´Ù");
-		
-		
-		int [] intAry = new int[5];
-		System.out.println(intAry[0]); //0ÀÌ¶ó´Â °ªÀ¸·Î ÃÊ±âÈ­µÇ¾îÀÖÀ½ 
-		
-		double[] heights = new double[3];
-		System.out.println(heights[0]);  // 0.0À¸·Î ³ª¿È 
-		
-		String[] names = new String[10]; // °ø°£¸¸ ¸¸µé¾îÁÖ´Â ¹æ¹ý
-		names[0] = "È«±æµ¿";  //°ªÀ» ´ã¾ÆÁØ´Ù
-		names[1] = "¹Ú±æµ¿";
-		names[2] = "±è±æµ¿";
-		names[3] = "¼­±æµ¿";
-		names[4] = "¿Ë±æµ¿";
-		System.out.println(names[2]);
-		System.out.println(names[5]); //°ªÀÌ ¾ø±â ¶§¹®¿¡ null ·Î ³ª¿È
-		
-	}//end main
 
-}//end class
+	public class ArrayExe1 {
+
+		public static void main(String[] args) {
+			int a = 10;
+			int[] ary = {10,20,33}; //ì„ ì–¸í•˜ë©´ì„œ ì´ˆê¸° ê°’ ì •í•˜ëŠ” ë°©ë²•
+			//int sum = ary[0] + ary[1]+ary[2]; //ì¸ë±ìŠ¤ ê°’ìœ¼ë¡œ ë¶ˆëŸ¬ì˜¤ê¸° 
+			int sum = 0;
+			for(int i = 0; i< ary.length; i++) {    //ê°’ì´ ì—¬ë ¤ê°œë©´ forë¬¸ìœ¼ë¡œ ë°˜ë³µì‹œì¼œ ëŒë¦¬ëŠ”ê²Œ íŽ¸í•¨ ary.length ë§Œí¼ ëŒë ¤ë¼
+				sum = sum + ary[i];
+			}
+			System.out.println("í•©ê³„ëŠ”"+sum+"ìž…ë‹ˆë‹¤");
+			
+			
+			int [] intAry = new int[5];
+			System.out.println(intAry[0]); //0ì´ë¼ëŠ” ê°’ìœ¼ë¡œ ì´ˆê¸°í™”ë˜ì–´ìžˆìŒ 
+			
+			double[] heights = new double[3];
+			System.out.println(heights[0]);  // 0.0ìœ¼ë¡œ ë‚˜ì˜´ 
+			
+			String[] names = new String[10]; // ê³µê°„ë§Œ ë§Œë“¤ì–´ì£¼ëŠ” ë°©ë²•
+			names[0] = "í™ê¸¸ë™";  //ê°’ì„ ë‹´ì•„ì¤€ë‹¤
+			names[1] = "ë°•ê¸¸ë™";
+			names[2] = "ê¹€ê¸¸ë™";
+			names[3] = "ì„œê¸¸ë™";
+			names[4] = "ì˜¹ê¸¸ë™";
+			System.out.println(names[2]);
+			System.out.println(names[5]); //ê°’ì´ ì—†ê¸° ë•Œë¬¸ì— null ë¡œ ë‚˜ì˜´
+			
+		}//end main
+
+	}//end class

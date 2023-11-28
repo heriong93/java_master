@@ -7,35 +7,35 @@ public class Exam98 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//1¹ø
-		String name = "°¨¹ÙÀÚ";
+		//1ë²ˆ
+		String name = "ê°ë°”ì";
 		int age = 25;
 		String tel1 = "010", tel2 = "123", tel3 = "4567";
-		System.out.println("ÀÌ¸§: "+ name);
-		System.out.print("³ªÀÌ: "+ age +"\n");
-		System.out.printf("ÀüÈ­: %s-%s-%s ",tel1,tel2,tel3);
+		System.out.println("ì´ë¦„: "+ name);
+		System.out.print("ë‚˜ì´: "+ age +"\n");
+		System.out.printf("ì „í™”: %s-%s-%s ",tel1,tel2,tel3);
 		
 		Scanner scanner = new Scanner (System.in);
 		
-		System.out.print("\n"+"Ã¹¹øÂ° ¼ö:");
+		System.out.print("\n"+"ì²«ë²ˆì§¸ ìˆ˜:");
 		String strNum1 = scanner.nextLine();
 		
-		System.out.print("µÎ¹øÂ° ¼ö:");
+		System.out.print("ë‘ë²ˆì§¸ ìˆ˜:");
 		String strNum2 = scanner.nextLine();
 		
 		int num1 = Integer.parseInt (strNum1) ;
 		int num2 = Integer.parseInt (strNum2) ;
 		int result = num1 +num2;
-		System.out.println("µ¡¼À °á°ú:" + result +"\n");
+		System.out.println("ë§ì…ˆ ê²°ê³¼:" + result +"\n");
 		
 		
-		System.out.print("ÀÌ¸§:");
+		System.out.print("ì´ë¦„:");
 		String strName = scanner.nextLine();
 			
-		System.out.print("ÁÖ¹Î¹øÈ£ ¾Õ 6ÀÚ¸®:");
+		System.out.print("ì£¼ë¯¼ë²ˆí˜¸ ì• 6ìë¦¬:");
 		String strNumber = scanner.nextLine();
 		
-		System.out.print("ÀüÈ­¹øÈ£:");
+		System.out.print("ì „í™”ë²ˆí˜¸:");
 		String strTel = scanner.nextLine();
 		
 		System.out.print(strName +"\n"+ strNumber + "\n" + strTel);

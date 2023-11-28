@@ -3,30 +3,30 @@ package chapter4;
 public class Exam140 {
 
 	public static void main(String[] args) {
-		//ÁÖ»çÀ§ ¹øÈ£ »Ì±â 
+		//ì£¼ì‚¬ìœ„ ë²ˆí˜¸ ë½‘ê¸° 
 		int num = (int)(Math.random() * 6) +1;
 		if(num == 1) {
-			System.out.println("1¹øÀÔ´Ï´Ù");
+			System.out.println("1ë²ˆì…ë‹ˆë‹¤");
 		}else if(num == 2) {
-			System.out.println("2¹øÀÔ´Ï´Ù");
+			System.out.println("2ë²ˆì…ë‹ˆë‹¤");
 		}else if(num == 3) {
-			System.out.println("3¹øÀÔ´Ï´Ù");
+			System.out.println("3ë²ˆì…ë‹ˆë‹¤");
 		}else if(num == 4) {
-			System.out.println("4¹øÀÔ´Ï´Ù");
+			System.out.println("4ë²ˆì…ë‹ˆë‹¤");
 		}else if(num == 5) {
-			System.out.println("5¹øÀÔ´Ï´Ù");
+			System.out.println("5ë²ˆì…ë‹ˆë‹¤");
 		}else {
-			System.out.println("6¹øÀÔ´Ï´Ù");
+			System.out.println("6ë²ˆì…ë‹ˆë‹¤");
 		}
 		
 		//switch
 		switch(num) {
-		case 1: System.out.println("s1¹øÀÔ´Ï´Ù"); break;
-		case 2: System.out.println("s2¹øÀÔ´Ï´Ù"); break;
-		case 3: System.out.println("s3¹øÀÔ´Ï´Ù"); break;
-		case 4: System.out.println("s4¹øÀÔ´Ï´Ù"); break;
-		case 5: System.out.println("s5¹øÀÔ´Ï´Ù"); break;
-		default: System.out.println("s6¹øÀÔ´Ï´Ù"); break;
+		case 1: System.out.println("s1ë²ˆì…ë‹ˆë‹¤"); break;
+		case 2: System.out.println("s2ë²ˆì…ë‹ˆë‹¤"); break;
+		case 3: System.out.println("s3ë²ˆì…ë‹ˆë‹¤"); break;
+		case 4: System.out.println("s4ë²ˆì…ë‹ˆë‹¤"); break;
+		case 5: System.out.println("s5ë²ˆì…ë‹ˆë‹¤"); break;
+		default: System.out.println("s6ë²ˆì…ë‹ˆë‹¤"); break;
 		}
 		
 

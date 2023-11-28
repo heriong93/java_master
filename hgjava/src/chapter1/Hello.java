@@ -16,7 +16,7 @@ public class Hello {
 		System.out.println(z);
 		System.out.println("y = " + y);
 		
-		//º¯¼öÀÇ °ª ±³È¯
+		//ë³€ìˆ˜ì˜ ê°’ êµí™˜
 		x = 3;
 		y = 10;
 		System.out.println(y);
@@ -26,11 +26,11 @@ public class Hello {
 		x = a;
 		System.out.println(y);
 		System.out.println(x);
-		//Ãâ·Â
+		//ì¶œë ¥
 		System.out.println(" x = " + x + "y = " + y);
 		
-		//±âº» Å¸ÀÔ
-		//Å©±â ¼ø¼­ byte<short<char (À½¼öÇ¥Çö ¾ÈµÊ) <int<long
+		//ê¸°ë³¸ íƒ€ì…
+		//í¬ê¸° ìˆœì„œ byte<short<char (ìŒìˆ˜í‘œí˜„ ì•ˆë¨) <int<long
 		
 		char charData = 'A';
 		int intData = charData;
@@ -38,8 +38,8 @@ public class Hello {
 		System.out.println(" char : " + charData + ", int : " + intData);
 		
 		char c1 = 'a';
-		int c2 = c1 +2;  //ÀÚµ¿Å¸ÀÔ º¯È¯
-		char c3 = (char) c2;  //°­Á¦Å¸ÀÔ º¯È¯
+		int c2 = c1 +2;  //ìë™íƒ€ì… ë³€í™˜
+		char c3 = (char) c2;  //ê°•ì œíƒ€ì… ë³€í™˜
 		System.out.printf("c2 : %d, c3 : %s\n",c2,c3);
 		
 		x =5;
@@ -52,7 +52,7 @@ public class Hello {
 		int result2 = (int)(v1 + v2);
 		System.out.println(result2);
 		
-		//È®ÀÎ¹®Á¦ 9 
+		//í™•ì¸ë¬¸ì œ 9 
 		
 		long var1 = 2L;
 		float var2 = 1.8f;
@@ -61,8 +61,8 @@ public class Hello {
 		int result3 = (int) (var1 + var2 + var3) +(int)(Double.parseDouble(var4));
 		System.out.println(result3);
 		
-		//Ç¥ÁØ ÀÔ·Â : Å°º¸µå => System.in.read()
-		//ÇÑ±ÛÀÚ¸¸ ÀĞ¾îµéÀÓ
+		//í‘œì¤€ ì…ë ¥ : í‚¤ë³´ë“œ => System.in.read()
+		//í•œê¸€ìë§Œ ì½ì–´ë“¤ì„
 		
 //		int keyCode;
 //		while(true) {
@@ -72,22 +72,22 @@ public class Hello {
 //				break;
 //			}
 //		}
-//		System.out.println("Á¾·á");
+//		System.out.println("ì¢…ë£Œ");
 //		
-		//¹®ÀÚ¿­ ÀÔ·Â -> Scanner Å¬·¡½º -> °´Ã¼¸¦ »ı¼ºÇØ¼­ »ç¿ë
+		//ë¬¸ìì—´ ì…ë ¥ -> Scanner í´ë˜ìŠ¤ -> ê°ì²´ë¥¼ ìƒì„±í•´ì„œ ì‚¬ìš©
 		String scinput;
 		Scanner sc = new Scanner(System.in);
 		while(true) {
-			System.out.print("ÀÌ¸§ ÀÔ·Â : ");
+			System.out.print("ì´ë¦„ ì…ë ¥ : ");
 			scinput = sc.nextLine();
 			if(scinput.equals("q")){
 				break;
 			}
-			System.out.println("³» ÀÌ¸§Àº " + scinput);			
+			System.out.println("ë‚´ ì´ë¦„ì€ " + scinput);			
 		}
-		System.out.println("Á¾·á");
+		System.out.println("ì¢…ë£Œ");
 		
-		System.out.print("¼ö ÀÔ·Â :");
+		System.out.print("ìˆ˜ ì…ë ¥ :");
 		scinput = sc.nextLine();
 		System.out.println(Integer.parseInt(scinput) + 10);
 		

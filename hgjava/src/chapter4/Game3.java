@@ -10,15 +10,15 @@ public class Game3 {
 		int num = (int)(Math.random()*100)+1;
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("¼ýÀÚ ÀÔ·Â:");
+		System.out.print("ìˆ«ìž ìž…ë ¥:");
 		int guess = sc.nextInt();
 		if(num != guess) {
 			if(num > guess) {
-				System.out.println("downÇÏ¼¼¿ä!");
+				System.out.println("downí•˜ì„¸ìš”!");
 			}if(num < guess) {
-				System.out.println("upÇÏ¼¼¿ä!");
+				System.out.println("upí•˜ì„¸ìš”!");
 			}else {
-				System.out.println("ÃàÇÏÇÕ´Ï´Ù!");
+				System.out.println("ì¶•í•˜í•©ë‹ˆë‹¤!");
 			}
 			
 		}
