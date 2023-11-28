@@ -1,11 +1,14 @@
 package todo1128;
 
 public class Board {
-	private int boardNum ; 
-	private String boardTitle;
-	private String boardUser;
-	private String boardText;
-	private String boardDate;
+	
+	private Board[] boards;
+	
+	int boardNum ; 
+	String boardUser;
+	String boardTitle;
+	String boardText;
+	String boardDate;
 
 	Board(int boardNum, String boardTitle, String boardUser){
 		this.boardNum = boardNum;
@@ -31,45 +34,55 @@ public class Board {
 		System.out.println("일시: "+boardDate);
 	}
 
-	public void setBoardNum(int boardNum) {
+	void setBoardNum(int boardNum) {
 		this.boardNum = boardNum;
 	}
 
-	public void setBoardTitle(String boardTitle) {
+	void setBoardTitle(String boardTitle) {
 		this.boardTitle = boardTitle;
 	}
 
-	public void setBoardUser(String boardUser) {
+	void setBoardUser(String boardUser) {
 		this.boardUser = boardUser;
 	}
 
-	public void setBoardText(String boardText) {
+	void setBoardText(String boardText) {
 		this.boardText = boardText;
 	}
 
-	public void setBoardDate(String boardDate) {
+	void setBoardDate(String boardDate) {
 		this.boardDate = boardDate;
 	}
 
-	public int getBoardNum() {
+	int getBoardNum() {
 		return boardNum;
 	}
 
-	public String getBoardTitle() {
+	String getBoardTitle() {
 		return boardTitle;
 	}
 
-	public String getBoardUser() {
+	String getBoardUser() {
 		return boardUser;
 	}
 
-	public String getBoardText() {
+	String getBoardText() {
 		return boardText;
 	}
 
-	public String getBoardDate() {
+	String getBoardDate() {
 		return boardDate;
 	}
+	
+	Board getboard(String num) {
+		for(int i = 0; i < boards.length; i++) {
+			if(boards[i] != null && boards[i].getBoardNum()==(num)) {
+				return boards[i];
+			}
+		}
+	}
+	
+	
 	
 	
 }
