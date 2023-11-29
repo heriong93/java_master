@@ -16,7 +16,7 @@ public class Board {
 		this.boardTitle = boardTitle;
 		this.boardUser = boardUser;
 	}
-	
+	//나도 변경했습니다
 	public Board(int boardNum, String boardTitle, String boardUser, String boardText, String boardDate) {
 		this.boardNum = boardNum;
 		this.boardTitle = boardTitle;
