@@ -10,6 +10,7 @@ public class Member {
 	private String memName; 
 	private String phone; //010-1234-5456 하이픈 들어가야하니 문자로 선언
 	private String gender; // male or female => M,F 로 썼을 경우 
+
 	//생성자 : 필드의 초기값을 지정  **클래스멤버
 	//기본 생성자(매개값이 없는것) 컴파일러 생성
 	Member(){
