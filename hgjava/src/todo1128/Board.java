@@ -2,13 +2,14 @@ package todo1128;
 
 public class Board {
 	
-	private Board[] boards;
 	
-	int boardNum ; 
-	String boardUser;
-	String boardTitle;
-	String boardText;
-	String boardDate;
+	private int boardNum ; 
+	private String boardUser;
+	private String boardTitle;
+	private String boardText;
+	private String boardDate;
+	
+	//이 부분이 변경되었습니다
 
 	Board(int boardNum, String boardTitle, String boardUser){
 		this.boardNum = boardNum;
