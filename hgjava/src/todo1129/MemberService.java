@@ -1,8 +1,8 @@
 package todo1129;
 
 public class MemberService {
-	String userId; 
-	String userPw;
+	String userId = "hong";
+	String userPw = "12345";
 	
 	MemberService(){
 		
@@ -15,7 +15,9 @@ public class MemberService {
 		this.userId = userId;
 	}
 	
-	 login() {
+	 boolean login(String id , String password){
+		 
+		 }
 		
 	}
 }
