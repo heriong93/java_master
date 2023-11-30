@@ -24,9 +24,10 @@ public class FriendExe {
 	}
 	//결과값이 null여부로 체크 x 
 	public Friend[] searchFriend(String name) { //3.조회(이름으로)
+		Friend[] result = new Friend[10];
 		for(int i = 0 ; i < storage.length; i++) {
 			if(storage[i].getName().equals(name)) {
-				return storage[i];
+				result[i] = storage[i];
 			}
 		}
 		return null;
