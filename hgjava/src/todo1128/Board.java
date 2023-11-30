@@ -2,15 +2,21 @@ package todo1128;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import lombok.Data;
+@Data 
 public class Board {
 	
 	
-	private int boardNum ; 
+	private int boardNum ;      //private 일 경우 get set 으로 값을 불러오거나 지정해줘야한다.잘못된 값을 설정하는걸 막기 위해  
 	private String boardUser;
 	private String boardTitle;
 	private String boardText;
 	private String boardDate;
+
+	
+	public Board(){
+		
+	};
 
 	public Board(int boardNum, String boardTitle, String boardUser){
 		this.boardNum = boardNum;
@@ -31,17 +37,18 @@ public class Board {
 	}
 	//나도 변경했습니다
 	public Board(int boardNum, String boardTitle, String boardUser, String boardText, String boardDate) {
-		this.boardNum = boardNum;
-		this.boardTitle = boardTitle;
-		this.boardUser = boardUser;
-		this.boardText = boardText;
-		this.boardDate = boardDate;
+		this(boardNum, boardTitle, boardUser, boardText);
+//		this.boardNum = boardNum;  //다 쓰지 않고 위의 한 줄로 대체할 수 있음 
+//		this.boardTitle = boardTitle;
+//		this.boardUser = boardUser;
+//		this.boardText = boardText;
+		this.boardDate = boardDate; //+ 나머지 추가 
 	}
-	String boardShortInfo() {
+	public String boardShortInfo() {
 		return boardNum+"- 제목은 "+" "+boardTitle+"  "+ boardUser+ " "+boardDate;
 	}
 	
-	String boardAllInfo() {
+	public String boardAllInfo() {
 		String result = "번호: "+boardNum+"  "+"제목 :"+boardTitle;
 		result += "\n"+"작성자: "+boardUser;
 		result += "\n"+"내용: "+boardText;
@@ -49,43 +56,43 @@ public class Board {
 		return result; 
 	}
 
-	void setBoardNum(int boardNum) {
+	public void setBoardNum(int boardNum) {
 		this.boardNum = boardNum;
 	}
 
-	void setBoardTitle(String boardTitle) {
+	public void setBoardTitle(String boardTitle) {
 		this.boardTitle = boardTitle;
 	}
 
-	void setBoardUser(String boardUser) {
+	public void setBoardUser(String boardUser) {
 		this.boardUser = boardUser;
 	}
 
- void setBoardText(String boardText) {
+	public void setBoardText(String boardText) {
 		this.boardText = boardText;
 	}
 
-	void setBoardDate(String boardDate) {
+	public void setBoardDate(String boardDate) {
 		this.boardDate = boardDate;
 	}
 
-	int getBoardNum() {
+	public int getBoardNum() {
 		return boardNum;
 	}
 
-	String getBoardTitle() {
+	public String getBoardTitle() {
 		return boardTitle;
 	}
 
-	String getBoardUser() {
+	public String getBoardUser() {
 		return boardUser;
 	}
 
-	String getBoardText() {
+	public String getBoardText() {
 		return boardText;
 	}
 
-	String getBoardDate() {
+	public String getBoardDate() {
 		return boardDate;
 	}
 }
