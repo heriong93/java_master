@@ -46,4 +46,8 @@ public class FriendExe {
 		return null;
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> branch 'master' of https://github.com/heriong93/java_master.git
