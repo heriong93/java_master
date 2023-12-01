@@ -5,8 +5,11 @@ import java.util.Scanner;
 public class FriendApp {
 	static Scanner sc = new Scanner(System.in);
 	static Friend[] storage = new Friend[10]; //인스턴스 10개 담을 수 잇는 공간 생성 
+	static FriendExe fexe = new FriendExe();
+	
 	public static void main(String[]args) {
 		boolean run = true;
+		FriendExe fexe = new FriendExe();
 		while(run) {
 			System.out.println("1.등록 2.목록 3.조회 4.종료");
 			int menu = Integer.parseInt(sc.nextLine());
@@ -41,7 +44,7 @@ public class FriendApp {
 		
 		if(subMenu == 1) { 
 			friend = new Friend(name, phone);
-			
+			fexe.addFriend(friend); 
 			//Friend 인스턴스 friend 에 새로운 name phone 정보를 넣을거야
 		}else if(subMenu == 2) {   //case 2: //이름, 연락처, 학교, 전공
 			System.out.println("학교:");
@@ -49,6 +52,7 @@ public class FriendApp {
 			System.out.println("전공:");
 			String major = sc.nextLine();
 			friend = new UnivFriend(name,phone,univ,major);
+			fexe.addFriend(friend);
 			
 			
 		}else if(subMenu ==3) { //case 3: //이름, 연락처, 회사 이름, 부서 이름
@@ -57,6 +61,7 @@ public class FriendApp {
 			System.out.println("부서:");
 			String dept = sc.nextLine();
 			friend = new CompFriend(name,phone,comp,dept);
+			fexe.addFriend(friend);
 			
 		}
 		//배열에 추가

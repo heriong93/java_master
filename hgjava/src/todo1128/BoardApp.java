@@ -17,11 +17,11 @@ public class BoardApp {
 	static BoardApp instance = new BoardApp(); 
 	
 	//생성자
-	private BoardApp() {
+	private BoardApp() { //싱글톤 생성(1)
 		
 	}
 	
-	public static BoardApp getInstance() {
+	public static BoardApp getInstance() {  //싱글톤 생성(2)
 		return instance;
 	}
 	
@@ -35,7 +35,7 @@ public class BoardApp {
 		System.out.println("오늘의 날짜를 기재해주세요 YYYY-MM-DD");
 		String date = sc.nextLine();
 
-		Board brd = new Board(BoardExe.getSequence(), title, issue, date);
+		Board brd = new Board(BoardExe.getSequence(), title,id, issue, date);
 
 		if (BoardExe.addBoard(brd)) {
 			System.out.println("입력 성공");
@@ -57,8 +57,17 @@ public class BoardApp {
 	}//end of boardList
 	
 	private void getBoard() {
+		int no = 0;
+		while(true) {
 		System.out.println("글번호 입력");
-		int no = Integer.parseInt(sc.nextLine());
+		
+		try {
+		     no = Integer.parseInt(sc.nextLine()); //<== 에러발생 지점 
+		     break;
+		}catch(NumberFormatException e ) {
+			System.out.println("숫자를 입력해주세요");
+		}
+		}
 		Board result = BoardExe.getBoard(no);
 		if (result != null) {
 			System.out.println(result.boardAllInfo());
@@ -70,14 +79,16 @@ public class BoardApp {
 	private void boardEdit() {
 		System.out.println("수정할 번호 입력: ");
 		int no = Integer.parseInt(sc.nextLine());
+		System.out.println("수정할 내용:");
+		String issue = sc.nextLine();
+		//권한체크 
 		if (!BoardExe.checkRespons(id, no)) { // !붙이면 false 의미
 			System.out.println("권한이 없습니다");
 			//continue;
 			return;
 		}
-		System.out.println("수정할 글 내용: ");
-		String content = sc.nextLine();
-		if (BoardExe.modBoard(no, content)) {
+		
+		if (BoardExe.modBoard(no, issue)) {
 			System.out.println("변경 성공!");
 		} else {
 			System.out.println("처리 실패!");
@@ -87,6 +98,7 @@ public class BoardApp {
 	private void boardDel() {
 		System.out.println("삭제할 글번호 입력: ");
 		int no = Integer.parseInt(sc.nextLine());
+		//권한체크 
 		if (!BoardExe.checkRespons(id, no)) { // !붙이면 false 의미
 			System.out.println("삭제 권한이 없습니다");
 			//continue;
@@ -128,9 +140,15 @@ public class BoardApp {
 		while (run) {
 			System.out.println("1.등록 2.목록 3.상세조회 4.수정 5.삭제 6.종료 ");
 			System.out.println("-----------------------------");
-			int choice = Integer.parseInt(sc.nextLine());
+			int menu = 0;
+			try {
+				menu = Integer.parseInt(sc.nextLine());  
+			}catch(NumberFormatException e){
+				System.out.println("정확한 옵션을 선택하세요");
+				continue;
+			}
 
-			switch (choice) {
+			switch (menu) {
 			case 1:  //글 등록
 				boardAdd();
 				break;
