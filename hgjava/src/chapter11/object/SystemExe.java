@@ -10,7 +10,7 @@ public class SystemExe {
 		
 		long start = System.currentTimeMillis();
 		long sum = 0;
-		for(int i = 1; i <= 1000000 ; i++) {
+		for(int i = 1; i <= 100000000 ; i++) {
 			sum += i; 
 		}
 		System.out.println("누적합: "+sum);
