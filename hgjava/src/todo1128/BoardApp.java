@@ -14,7 +14,7 @@ public class BoardApp {
 	private String id = null;
 	
 	//싱글톤 방식의 인스턴스 생성 
-	static BoardApp instance = new BoardApp(); 
+	private static BoardApp instance = new BoardApp(); 
 	
 	//생성자
 	private BoardApp() { //싱글톤 생성(1)
@@ -132,11 +132,11 @@ public class BoardApp {
 			} else {
 				System.out.println("id, pw 확인하세요!");
 			}
-		}
+		} //로그인처리 
 
 		// 초기값 생성
 		BoardExe.initData();
-
+		
 		while (run) {
 			System.out.println("1.등록 2.목록 3.상세조회 4.수정 5.삭제 6.종료 ");
 			System.out.println("-----------------------------");

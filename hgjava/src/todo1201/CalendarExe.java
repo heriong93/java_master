@@ -15,10 +15,9 @@ public class CalendarExe {
 			System.out.printf("%4s","");
 		}
 		
-		for(int i = 1; i <=31; i++) {
-			System.out.printf("%4d",i);
-			
-			if(i % 7 == 0) {
+		for(int i = 1; i <= 31 ; i++) {
+				System.out.printf("%4d",i);
+			if(i % 7 == 2 ) {
 				System.out.println();
 			}
 		}
