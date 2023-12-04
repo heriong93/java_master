@@ -1,13 +1,17 @@
 package remind6;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import chap13.Member;
 
 public class StudentApp {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		boolean run = true;
-		Student [] students = new Student [100];
+		List<Student> students = new ArrayList<>();
 		
 		
 		StudentExe exe = new StudentExe();
@@ -27,6 +31,7 @@ public class StudentApp {
 			int math = Integer.parseInt(sc.nextLine());
 			
 			Student std = new Student (no, name, eng, math);
+			std.add(new Student(no, name,eng,math));
 			//students 배열에 한 건 저장 
 //			for (int i = 0; i < students.length; i++) {
 //				if(students[i] == null) {

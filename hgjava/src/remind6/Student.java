@@ -18,6 +18,7 @@ public class Student {
 		
 }
 	//private일때 대체하기 위해 사용. 
+	
 	void setStuNum(String stuNum) {
 		this.stuNum = stuNum;
 	}
