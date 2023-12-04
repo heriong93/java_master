@@ -40,7 +40,7 @@ public class StudentExe {
 	//단건조회 
 	String getStudent(int no) {
 		for(int i = 0; i < students.size();i++) {
-			if(students.get(i) != null && students.get(i).String getStuNum() == no) {
+			if(students.get(i) != null && students.get(i).getStuNum() == no) {
 				return students.get(i);
 			}
 		}
@@ -51,7 +51,7 @@ public class StudentExe {
 	//수정
 	boolean modifyStudent(String no, int eng, int math) {
 		for(int i = 0; i< students.length; i++) {
-			if(students[i] != null && students[i].getStuNum().equals(no)) {
+			if(students.get(i) != null && students.get(i).getStuNum().equals(no)) {
 				students[i].setEngScore(eng);
 				students[i].setMathScore(math);
 				return true;

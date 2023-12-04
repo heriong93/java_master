@@ -10,6 +10,7 @@ public class ListExe3 {
 		// 회원등록(회원번호, 이름, 포인트)
 		// 1. 등록 2. 이름조회(이름은 중복되면 다 출력되도록) 3. 포인트 변경 4. 삭제(한 건 기준) 5. 종료
 		List<Member> members = new ArrayList<>();
+		
 		Scanner sc = new Scanner(System.in);
 		boolean run = true;
 		String name = null;
@@ -33,7 +34,7 @@ public class ListExe3 {
 				}
 				break;
 			case 2:
-				System.out.println("조회하실 이름 입력:");
+				System.out.println("조회 이름 입력:");
 				name = sc.nextLine();
 				for (int i = 0; i < members.size(); i++) {
 					String searchName = members.get(i).getMemberName();
@@ -42,7 +43,7 @@ public class ListExe3 {
 					}
 				}
 				break;
-			case 3:System.out.println("포인트 변경 할 회원 이름:");
+			case 3:System.out.println("포인트 변경 회원 이름:");
 			name = sc.nextLine();
 			for(int i  = 0; i < members.size();i++) {
 				String pointChange = members.get(i).getMemberName();
@@ -54,7 +55,7 @@ public class ListExe3 {
 			}
 				break;
 			case 4:
-				System.out.println("삭제할 회원의 이름 입력:");
+				System.out.println("삭제 회원 이름 입력:");
 				name = sc.nextLine();
 				for(int i  = 0; i < members.size();i++) {
 				String deleteMem = members.get(i).getMemberName();

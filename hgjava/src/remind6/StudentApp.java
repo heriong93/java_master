@@ -14,6 +14,7 @@ public class StudentApp {
 		List<Student> students = new ArrayList<>();
 		
 		
+		
 		StudentExe exe = new StudentExe();
 		while(run) {
 			System.out.println("1. 등록 2.목록 3. 단건 조회 4.수정 5.삭제 6.종료 ");
