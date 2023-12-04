@@ -11,6 +11,7 @@ public class ListExe {
 		for (int i = 0; i < strs.length; i++) {
 			System.out.println(strs[i]);
 		}
+		
 		List<String> list = new ArrayList<String>(); // 컬렉션
 		list.add("Apple");
 		list.add("Banana");

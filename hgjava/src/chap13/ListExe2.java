@@ -5,6 +5,7 @@ import java.util.List;
 
 public class ListExe2 {
 	public static void main(String[]args) {
+		
 		List<Member> members = new ArrayList<>();
 		members.add(new Member("M-001","홍길동","1000"));
 		members.add(new Member("M-002","김길동","1500"));

@@ -11,6 +11,7 @@ public class Member {
 		this.point = point;
 	}
 
+	
 	public String getMembeNum() {
 		return membeNum;
 	}

@@ -11,6 +11,7 @@ public class ListExe3 {
 		// 1. 등록 2. 이름조회(이름은 중복되면 다 출력되도록) 3. 포인트 변경 4. 삭제(한 건 기준) 5. 종료
 		List<Member> members = new ArrayList<>();
 		
+		
 		Scanner sc = new Scanner(System.in);
 		boolean run = true;
 		String name = null;

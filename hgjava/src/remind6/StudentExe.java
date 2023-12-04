@@ -33,7 +33,6 @@ public class StudentExe {
 	
 	//목록
 	
-	
 	public List<String> getStudents() {
 		return students;
 	}

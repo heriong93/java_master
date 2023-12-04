@@ -13,6 +13,7 @@ public class Student {
 		this.engScore = engScore;
 		this.mathScore = mathScore;
 	}
+	
 	void showInfo() {
 		System.out.println(stuName+"학생의 영어점수는:"+engScore+"이며, 수학점수는"+mathScore+"입니다");
 		
