@@ -18,6 +18,7 @@ public class Book {
 		this.bookPrice = bookPrice;
 	}
 	
+	
 	void showInfo() {
 		System.out.println(bookNum +"\t"+bookName+"\t"+ bookAuth+"\t"+bookPrice);
 		

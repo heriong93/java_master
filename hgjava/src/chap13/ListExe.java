@@ -16,6 +16,7 @@ public class ListExe {
 		list.add("Apple");
 		list.add("Banana");
 		list.add("Cherry");
+		
 
 		list.remove(0); // 삭제 - 첫번째 위치의 값을 삭제하겠다 ->or-> list.remove("Apple") -> 이렇게 써도됨.출력시 Apple 출력안됨
 		list.set(0, "바나나"); // Apple 삭제되면 Banana가 값이 0이 됨. 값을 변경할 수도 있음

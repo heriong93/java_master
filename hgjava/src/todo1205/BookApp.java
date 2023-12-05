@@ -18,6 +18,7 @@ public class BookApp {
 		int choice = Integer.parseInt(sc.nextLine());
 		switch(choice) {
 		case 1: 
+			
 			System.out.println("1)도서코드 입력>>");
 			String bnum = sc.nextLine();
 			System.out.println("2)도서명 입력>>");

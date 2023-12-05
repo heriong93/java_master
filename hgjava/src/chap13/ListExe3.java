@@ -18,7 +18,7 @@ public class ListExe3 {
 			System.out.println("1.등록 2.조회 3.포인트 변경 4.삭제 5.종료");
 			int menu = Integer.parseInt(sc.nextLine());
 			switch (menu) {
-			case 1:
+			case 1: 
 				System.out.println("회원번호 입력:");
 				String num = sc.nextLine();
 				System.out.println("등록하실 성함 입력:");

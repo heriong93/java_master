@@ -14,6 +14,7 @@ public class CalendarExe {
 		System.out.println("년도:" + cal.get(Calendar.DAY_OF_WEEK)); //일주일 중 어느요일인지 알려줌 
 		System.out.println("막날:"+cal.getActualMaximum(Calendar.DATE)); //이번달의 마지막 날을 보여줌 
 		
+		
 	}
 
 }
