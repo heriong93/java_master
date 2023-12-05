@@ -9,21 +9,21 @@ import chap13.Member;
 
 public class StudentExe {
 	//배열: 
-	private List<String> students ;
+	private Student[] students ;
 	
 	//생성자 
 	StudentExe(){
 		
-		List<Student> students = new ArrayList<>();
-		students.add(new Student("23-001","홍길동",77,88));
-		students.add(new Student("23-002","김철수",88,90));
+		students = new Student[100];
+		students[0]=new Student("23-001","홍길동",77,88);
+		students[1]=new Student("23-002","김철수",88,90);
 		
 	}
 	//추가
 	boolean addStudent(Student std) {
-		for(int i = 0; i< students.size(); i++) {
-			if(students.get(i) == null) {
-				students.get(i).equals(std);
+		for(int i = 0; i< students.length; i++) {
+			if(students[i] == null) {
+				students[i] = std;
 //				break;
 				return true;
 			}
@@ -33,14 +33,14 @@ public class StudentExe {
 	
 	//목록
 	
-	public List<String> getStudents() {
+	Student[] getStudents() {
 		return students;
 	}
 	//단건조회 
-	String getStudent(int no) {
-		for(int i = 0; i < students.size();i++) {
-			if(students.get(i) != null && students.get(i).getStuNum() == no) {
-				return students.get(i);
+	Student getStudent(String no) {
+		for(int i = 0; i < students.length;i++) {
+			if(students[i] != null && students[i].getStuNum().equals(no)) {
+				return students[i];
 			}
 		}
 		return null;
@@ -50,7 +50,7 @@ public class StudentExe {
 	//수정
 	boolean modifyStudent(String no, int eng, int math) {
 		for(int i = 0; i< students.length; i++) {
-			if(students.get(i) != null && students.get(i).getStuNum().equals(no)) {
+			if(students[i] != null && students[i].getStuNum().equals(no)) {
 				students[i].setEngScore(eng);
 				students[i].setMathScore(math);
 				return true;

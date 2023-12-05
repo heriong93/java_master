@@ -1,4 +1,4 @@
-package remind6;
+package remind7;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +43,12 @@ public class StudentApp {
 			}
 			break;
 		case 2: //목록보기 
+			ArrayList<Book>stdAry = exe.getBookList(); ///컬렉션 사용 
+			for(Book stdnt : stdAry) {
+				if (stdnt != null) {
+					stdnt.showInfo();
+				}
+			}
 //			for(int i = 0; i< students.length; i++) {
 //				if(students[i] != null) {
 //					students[i].showInfo();
@@ -76,6 +82,7 @@ public class StudentApp {
 				math = Integer.parseInt(sc.nextLine());
 				System.out.print("수정할 영어점수 입력:");
 				eng = Integer.parseInt(sc.nextLine());
+				
 				if(exe.modifyStudent(no, eng, math)) {
 					System.out.println("수정 완료");
 			}else {

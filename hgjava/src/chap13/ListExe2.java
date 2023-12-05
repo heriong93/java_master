@@ -13,7 +13,7 @@ public class ListExe2 {
 		String search = "길동";
 		int cnt = 0;
 		for(int i = 0; i < members.size();i++) {
-			if(members.get(i).getMemberName().indexOf(search) != -1 && members.get(i).getPoint() >= 1500) {
+			if(members.get(i).getMemberName().indexOf(search) != -1 && members.get(i).getPoint().equals(1500)) {
 				
 				cnt++;
 				members.remove(i);
