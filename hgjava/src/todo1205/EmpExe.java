@@ -5,20 +5,15 @@ import java.util.List;
 
 public class EmpExe {
 	List<Emp> enterprise;
-}
+
 	EmpExe(){
 		List<Emp> enterprise = new ArrayList<>();
 	}
-	
-	boolean addList(List<Emp> emp2) {
-		for(int i = 0; i< enterprise.size();i++) {
-			if(enterprise.get(i) == null) {
-				enterprise.get(i).equals(emp2);
-				return true;
-			}
-		}
-		return false;
+	//목록 저장
+	boolean addList(Emp emp2) {
+		return enterprise.add(emp2);
 	}//end of boolean
+	
 	
 	//목록
 	public List<Emp> getList(){

@@ -58,9 +58,9 @@ public class ListExe3 {
 					if (name.equals(deleteMem)) {
 						members.remove(i);
 						System.out.println("삭제 되었습니다");
-						if (members.size() == 0) {
-							System.out.println("삭제할 회원이 없습니다");
 						}
+					if (members.size() == 0) {
+						System.out.println("삭제할 회원이 없습니다");
 					}
 				}
 			case 5:

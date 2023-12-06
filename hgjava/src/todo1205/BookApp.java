@@ -1,61 +1,78 @@
 package todo1205;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-//1.등록 2.목록 3. 수정 4.삭제 5.종료
-public class BookApp {
-	public static void main(String []args) {
-		List<Book> books = new ArrayList<>();
-	Scanner sc = new Scanner(System.in);
-	boolean run = true ; 
-	BookExe exe = new BookExe();
-	
-	while(run) {
-		System.out.println("1.등록 2. 목록 3. 수정 4. 삭제 5. 종료");
-		System.out.println("================================");
-		int choice = Integer.parseInt(sc.nextLine());
-		switch(choice) {
-		case 1: 
-			
-			System.out.println("1)도서코드 입력>>");
-			String bnum = sc.nextLine();
-			System.out.println("2)도서명 입력>>");
-			String bname = sc.nextLine();
-			System.out.println("3)저자 입력>>");
-			String baut = sc.nextLine();
-			System.out.println("4)출판사 입력>>");
-			String bcom = sc.nextLine();
-			System.out.println("5)가격 입력>>");
-			String bpri = sc.nextLine();
-			
-			books.add(new Book(bnum,bname,baut,bcom,bpri));
-			System.out.println("저장되었습니다");
-			break;
-		case 2:
-			System.out.println("도서코드"+"\t도서명"+"\t저자"+"\t가격");
-			for(Book book : books) {
-				book.showInfo();
-			}
-			break; 
-		case 3: 
-			System.out.println("1)도서코드입력>>");
-			String bnu = sc.nextLine();
-			System.out.println("2)도서가격입력>>");
-			String bprice = sc.nextLine();
-			if(exe.modifyBookp(bnu,bprice)){
-				System.out.println("수정되었습니다");
-			}else {
-				System.out.println("수정에 실패하였습니다");
-			}
-			break; 
-		case 4: 
-			break;
-		case 5: System.out.println("프로그램을 종료합니다");
-		run = false;
-		}//end of switch
-	}//end of while
-	System.out.println("end of prog.");
-	}//end of main	
+public class EmpApp {
+	public static void main(String [] args) {
+		List<Emp> enterprise = new ArrayList<>();
+		Scanner sc = new Scanner(System.in);
+		boolean run = true;
+		EmpExe exe = new EmpExe();
+		while(run) {
+			System.out.println("1-등록 2-목록 3-수정(급여) 4-삭제 5-조회");
+			int choice = Integer.parseInt(sc.nextLine());
+			switch(choice) {
+			case 1: 
+				System.out.println("사번 입력:");
+				String num = sc.nextLine();
+				System.out.println("이름 입력:");
+				String name = sc.nextLine();
+				System.out.println("전화번호 입력:");
+				String phone = sc.nextLine();
+				System.out.println("입사일자 입력:");
+				String entry = sc.nextLine();
+				if(entry == " ") {
+					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+					entry.equals(sdf);
+				}
+				System.out.println("급여 입력:");
+				String pay = sc.nextLine();
+				enterprise.add(new Emp(num,name,phone,entry,pay));
+				break;
+			case 2: 
+				System.out.println("사번/"+"\t사원 이름/"+"\t전화번호/"+"\t입사일자/"+"\t급여 ");
+				for(Emp emp :enterprise) {
+					emp.showInfo();
+				}
+				break;
+			case 3: 
+				System.out.println("수정할 사원의 이름 입력:");
+				String wkname=sc.nextLine();
+				System.out.println("변경할 급여:");
+				String wkpay = sc.nextLine();
+				if(exe.modifyList(wkname, wkpay)) {
+					System.out.println("수정 완료");
+				}else {
+					System.out.println("수정에 실패하였습니다");
+				}
+				break;
+			case 4: 
+				System.out.println("삭제할 사원 입력:");
+				String delemp=sc.nextLine();
+				if(exe.removeList(delemp)) {
+					System.out.println("삭제 완료");
+				}else {
+					System.out.println("삭제에 실패하였습니다");
+				}
+				break;
+			case 5: 
+				System.out.println("조회 이름 입력");
+				String nam=sc.nextLine();
+				for (int i = 0; i < enterprise.size(); i++) {
+					String searchName = enterprise.get(i).getEmpName();
+					if (enterprise.get(i).getEmpName().equals(nam)) {
+						System.out.println("사번"+"\n사원 이름"+"\n전화번호"+"\n입사일자"+"\n급여");
+						System.out.println(enterprise.get(i).getEmpNum() + enterprise.get(i).getEmpName()
+								+ enterprise.get(i).getEmpPhone()+enterprise.get(i).getEmpDate()+enterprise.get(i).getEmpMoney());
+					}
+				}
+				break;
+			}//end of switch
+		}//end of while
+		System.out.println("end of prog");
+		
+	}//end of main
 }//end of class

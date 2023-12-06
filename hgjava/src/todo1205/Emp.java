@@ -15,7 +15,7 @@ public class Emp {
 		this.empMoney = empMoney;
 	}
 	void showInfo() {
-		System.out.println(empNum+empName+empPhone+empDate+empDate+empMoney);
+		System.out.println(empNum+"\t"+empName+"\t"+empPhone+"\t"+empDate+"\t"+empMoney);
 	}
 	public String getEmpNum() {
 		return empNum;

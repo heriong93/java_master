@@ -1,6 +1,8 @@
 package todo1205;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,12 +25,16 @@ public class EmpApp {
 				String phone = sc.nextLine();
 				System.out.println("입사일자 입력:");
 				String entry = sc.nextLine();
+				if(entry == " ") {
+					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+					entry = sdf.format(new Date());
+				}
 				System.out.println("급여 입력:");
 				String pay = sc.nextLine();
 				enterprise.add(new Emp(num,name,phone,entry,pay));
 				break;
 			case 2: 
-				System.out.println("사번"+"\n사원 이름"+"\n전화번호"+"\n입사일자"+"\n급여");
+				System.out.println("사번/"+"\t사원 이름/"+"\t전화번호/"+"\t입사일자/"+"\t급여 ");
 				for(Emp emp :enterprise) {
 					emp.showInfo();
 				}
@@ -57,7 +63,6 @@ public class EmpApp {
 				System.out.println("조회 이름 입력");
 				String nam=sc.nextLine();
 				for (int i = 0; i < enterprise.size(); i++) {
-					String searchName = enterprise.get(i).getEmpName();
 					if (enterprise.get(i).getEmpName().equals(nam)) {
 						System.out.println("사번"+"\n사원 이름"+"\n전화번호"+"\n입사일자"+"\n급여");
 						System.out.println(enterprise.get(i).getEmpNum() + enterprise.get(i).getEmpName()
@@ -68,6 +73,6 @@ public class EmpApp {
 			}//end of switch
 		}//end of while
 		System.out.println("end of prog");
-		
+		sc.close();
 	}//end of main
 }//end of class

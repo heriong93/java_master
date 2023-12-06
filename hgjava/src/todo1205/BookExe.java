@@ -13,15 +13,8 @@ public class BookExe {
 		books.add(new Book("B001","이것이 자바다","신용권","예담","25000"));
 	}
 	
-	boolean addBook(List<Book> books2) {
-		for(int i = 0; i< books.size();i++) {
-			if(books.get(i) == null) {
-				books.get(i).equals(books2);
-				return true;
-			}
-		}
-		return false;
-		
+	boolean addBook(Book books2) {
+		return books.add(books2);
 	}//end of boolean
 	
 	//목록
