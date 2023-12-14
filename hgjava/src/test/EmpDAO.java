@@ -41,15 +41,15 @@ public class EmpDAO {
 	}
 	// 조회
 
-	boolean lookList(String endate) {
+	Employee lookList(String endate) {
 		for (int i = 0; i < enter.size(); i++) {
 			if (enter.get(i).getEmpDate().equals(endate)) {
 				System.out.println(enter.get(i).getEmpNum() + enter.get(i).getEmpName() + enter.get(i).getEmpDate());
 //				enter.get(i).showInfo();
-				return true;
+				return enter.get(i);
 			}
 		}
-		return false;
+		return null;
 	}
 
 }// end of class

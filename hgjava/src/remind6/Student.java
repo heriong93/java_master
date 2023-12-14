@@ -6,12 +6,15 @@ public class Student {
 	int engScore;
 	int mathScore;
 	
+	Student(){
+
+	}
 	
 	Student(String stuNum, String stuName, int engScore, int mathScore){
-		this.stuNum = stuNum;
-		this.stuName = stuName;
-		this.engScore = engScore;
-		this.mathScore = mathScore;
+		this.stuNum = stuNum; //stu_num
+		this.stuName = stuName;//stu_name
+		this.engScore = engScore;//eng_score
+		this.mathScore = mathScore; //math_score 
 	}
 	
 	void showInfo() {

@@ -1,68 +1,67 @@
 package todo1205;
-//도서코드/ 도서명/저자/ 출판사/가격 정보 저장
+
 public class Book {
-	String bookNum;
-	String bookName;
-	String bookAuth;
-	String bookComp;
-	String bookPrice;
-	
-	Book(){
-		
+	private String bookCode;
+	private String bookTitle;
+	private String author;
+	private String press;
+	private int price;
+
+	Book() {
+
 	}
-	public Book(String bookNum, String bookName, String bookAuth, String bookComp, String bookPrice){
-		this.bookNum = bookNum;
-		this.bookName = bookName;
-		this.bookAuth = bookAuth;
-		this.bookComp = bookComp;
-		this.bookPrice = bookPrice;
+
+	public Book(String bookCode, String bookTitle, String author, String press, int price) {
+		this.bookCode = bookCode;
+		this.bookTitle = bookTitle;
+		this.author = author;
+		this.press = press;
+		this.price = price;
 	}
-	
-	
+
+	// 메소드 정의.
 	void showInfo() {
-		System.out.println(bookNum +"\t"+bookName+"\t"+ bookAuth+"\t"+bookPrice);
-		
+		System.out.println(bookCode + "   " + bookTitle + "   " +author + "   "+ press + "   " + price);
 	}
 
-	public String getBookNum() {
-		return bookNum;
+	String getBookCode() {
+		return bookCode;
 	}
 
-	public String getBookName() {
-		return bookName;
+	void setBookCode(String bookCode) {
+		this.bookCode = bookCode;
 	}
 
-	public String getBookAuth() {
-		return bookAuth;
+	String getBookTitle() {
+		return bookTitle;
 	}
 
-	public String getBookComp() {
-		return bookComp;
+	void setBookTitle(String bookTitle) {
+		this.bookTitle = bookTitle;
 	}
 
-	public String getBookPrice() {
-		return bookPrice;
+	String getAuthor() {
+		return author;
 	}
 
-	public void setBookNum(String bookNum) {
-		this.bookNum = bookNum;
+	void setAuthor(String author) {
+		this.author = author;
 	}
 
-	public void setBookName(String bookName) {
-		this.bookName = bookName;
+	String getPress() {
+		return press;
 	}
 
-	public void setBookAuth(String bookAuth) {
-		this.bookAuth = bookAuth;
+	void setPress(String press) {
+		this.press = press;
 	}
 
-	public void setBookComp(String bookComp) {
-		this.bookComp = bookComp;
+	int getPrice() {
+		return price;
 	}
 
-	public void setBookPrice(String bookPrice) {
-		this.bookPrice = bookPrice;
+	void setPrice(int price) {
+		this.price = price;
 	}
-	
-	
+
 }
