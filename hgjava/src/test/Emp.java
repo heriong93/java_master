@@ -1,6 +1,6 @@
 package test;
 
-public class Employee {
+public class Emp {
 	
 	private String empNum;
 	private String empName;
@@ -8,7 +8,7 @@ public class Employee {
 	private String empDate;
 	private String empMoney;
 	
-	public Employee(String empNum, String empName, String empPhone, String empDate, String empMoney) {
+	public void Employee(String empNum, String empName, String empPhone, String empDate, String empMoney) {
 		this.empNum = empNum;
 		this.empName = empName;
 		this.empPhone = empPhone;

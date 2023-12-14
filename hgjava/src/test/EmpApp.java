@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class EmpApp {
 public static void main (String[]args) {
-		List<Employee> enter = new ArrayList<>();
+	
 		Scanner sc= new Scanner (System.in);
 		boolean run = true;
 		EmpDAO ex = new EmpDAO();
@@ -33,7 +33,8 @@ public static void main (String[]args) {
 				}
 				System.out.print("급여입력>>");
 				String pay =sc.nextLine();
-				enter.add(new Employee(num,name,phone,entry,pay));
+				List<Emp> enter = new ArrayList<>();
+				enter.add(new Emp(num,name,phone,entry,pay));
 				System.out.println("등록되었습니다.");
 				break;
 			case 2:
