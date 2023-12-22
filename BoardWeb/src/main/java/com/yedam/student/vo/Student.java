@@ -1,4 +1,4 @@
-package common;
+package com.yedam.student.vo;
 
 public class Student {
 	String stuNum;

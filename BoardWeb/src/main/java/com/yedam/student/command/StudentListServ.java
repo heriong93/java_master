@@ -1,4 +1,4 @@
-package common;
+package com.yedam.student.command;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,6 +9,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.yedam.student.mapper.StudentDAO;
+import com.yedam.student.service.StudentService;
+import com.yedam.student.serviceImpl.StudentServiceImpl;
+import com.yedam.student.serviceImpl.StudentServiceMybatis;
+import com.yedam.student.vo.Student;
 
 @WebServlet("/StudentList") // url 이름은 바꿔줘도 됨. 이 서블렛을 실행하기 위한 url
 public class StudentListServ extends HttpServlet {
@@ -24,8 +30,8 @@ public class StudentListServ extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8"); 
 		PrintWriter out = response.getWriter();
 		//목록 페이지 
-		StudentDAO dao = new StudentDAO();
-		List<Student> list = dao.getStudents();
+		StudentService dao = new StudentServiceMybatis();
+		List<Student> list = dao.studentList();
 		
 		//out.print("<table border='1'>");
 		String str = "<table border='1'>";

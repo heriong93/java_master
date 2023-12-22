@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.yedam.student.mapper.StudentMapper">
+  <select id="studentList" resultType="student">   
+    select * from student order by 1 
+  </select>
+  
+  <insert id="addStudent" parameterType="student">
+  	insert into student values(#{stuNum},#{stuName},#{engScore},#{mathScore})
+  </insert>
+  
+  <delete id="remStudent" parameterType="string">    <!-- studentMapper.java참조 반환값이랑 메소드 이름 확인  -->
+  	DELETE FROM student WHERE stu_num = #{sno}       <!-- 반환값을은 studentMapper.java에서 지정해준 것처럼 적어주면 연동됨 -->
+  </delete>
+</mapper>

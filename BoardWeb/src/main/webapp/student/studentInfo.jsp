@@ -1,5 +1,7 @@
-<%@page import="common.Student"%>
-<%@page import="common.StudentDAO"%>
+<%@page import="com.yedam.student.serviceImpl.StudentServiceImpl"%>
+<%@page import="com.yedam.student.service.StudentService"%>
+<%@page import="com.yedam.student.vo.Student"%>
+<%@page import="com.yedam.student.mapper.StudentDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <!-- StudentListServlet과 동일??  -->
@@ -15,7 +17,7 @@
 	
 	// 내장객체: request
 	String sno = request.getParameter("sno");
-	StudentDAO dao = new StudentDAO();
+	StudentService dao = new StudentServiceImpl();
 	Student std = dao.getStudent(sno);
 	%>
 	

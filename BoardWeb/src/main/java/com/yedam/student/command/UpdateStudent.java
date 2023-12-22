@@ -1,4 +1,4 @@
-package common;
+package com.yedam.student.command;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.yedam.student.mapper.StudentDAO;
+import com.yedam.student.service.StudentService;
+import com.yedam.student.serviceImpl.StudentServiceImpl;
 
 
 @WebServlet("/updateStudent")
@@ -26,8 +30,8 @@ public class UpdateStudent extends HttpServlet {
 		String escore = request.getParameter("escore");
 		String mscore = request.getParameter("mscore");
 		
-		StudentDAO dao = new StudentDAO();
-		boolean done = dao.modifyStudent(sno,Integer.parseInt(escore),Integer.parseInt(mscore));
+		StudentService dao = new StudentServiceImpl();
+		boolean done = dao.modStudent(sno,Integer.parseInt(escore),Integer.parseInt(mscore));
 		
 		PrintWriter out =response.getWriter();
 		if(done) {

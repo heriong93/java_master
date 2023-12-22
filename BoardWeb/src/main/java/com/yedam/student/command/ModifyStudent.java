@@ -1,4 +1,4 @@
-package common;
+package com.yedam.student.command;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,6 +6,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.yedam.student.mapper.StudentDAO;
+import com.yedam.student.service.StudentService;
+import com.yedam.student.serviceImpl.StudentServiceImpl;
+import com.yedam.student.vo.Student;
 
 @WebServlet("/modifyStudent") //url은 소문자로 지정해줌 
 public class ModifyStudent extends HttpServlet {
@@ -21,7 +26,7 @@ public class ModifyStudent extends HttpServlet {
 		//조회를 위한 파라미터 활용
 		String sno = request.getParameter("sno");
 		
-		StudentDAO dao = new StudentDAO();
+		StudentService dao = new StudentServiceImpl();
 		Student std = dao.getStudent(sno);
 		
 		String str = "<form action='updateStudent'>";  //입력된 값을 

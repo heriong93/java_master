@@ -1,4 +1,4 @@
-package common;
+package com.yedam.student.command;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,6 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.yedam.student.mapper.StudentDAO;
+import com.yedam.student.service.StudentService;
+import com.yedam.student.serviceImpl.StudentServiceImpl;
+import com.yedam.student.serviceImpl.StudentServiceMybatis;
+import com.yedam.student.vo.Student;
 
 @WebServlet("/MyInfoServlet")  //url
 public class MyInfoServlet extends HttpServlet {
@@ -32,7 +38,7 @@ public class MyInfoServlet extends HttpServlet {
 		
 		//db저장
 		Student std = new Student(sno,sname,Integer.parseInt(escore),Integer.parseInt(mscore));  //생성자 타입에 맞게끔 타입변환 
-		StudentDAO dao = new StudentDAO();
+		StudentService dao = new StudentServiceMybatis();
 		boolean done = dao.addStudent(std);
 		
 		
