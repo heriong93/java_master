@@ -51,6 +51,7 @@ public class FrontController extends HttpServlet{
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl()); //로그인 눌러서 실행되는 것
 		map.put("/logout.do", new LogoutControl());  //로그아웃 눌러서 실행되는것 
+		
 	}
 	
 	//이거 찾아봐서 공부하기 //책내용 +인터넷 찾아보기 
