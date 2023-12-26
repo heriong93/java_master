@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <!-- mybatis-config.xml 에서 typealias, mapper 추가해주기  -->
+  <!-- boardMapper.java에 있는 생성자이름으로 id지정해줌.같이 참조해서 바교해 보기   -->
+<mapper namespace="com.yedam.member.mapper.MemberMapper">
+<!-- 목록 -->
+  <select id="selectMember" resultType="member">   
+    select * from member where id=#{id} and pw=#{pw} 
+  </select>
+</mapper>

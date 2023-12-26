@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.board.service.BoardService;
-import com.yedam.board.serviceimpl.BoardServiceMybatis;
+import com.yedam.board.serviceImpl.BoardServiceMybatis;
 import com.yedam.board.vo.BoardVO;
 
 public class MainControl implements Control {

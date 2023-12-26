@@ -1,4 +1,4 @@
-package com.yedam.board.serviceimpl;
+package com.yedam.board.serviceImpl;
 
 import java.util.List;
 
