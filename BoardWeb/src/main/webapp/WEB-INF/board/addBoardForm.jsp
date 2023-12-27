@@ -1,18 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>addBoardForm.jsp</title>
-</head>
-<body>
-<%
-String logName = (String) session.getAttribute("logName");
-%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
     <h3>등록화면</h3>
-    <form action="addBoard.do">
-        <table border="1">
+    <!-- endtype="x-www-form-urlencoded" 업로드 시 사용 multipart/form-data 이미지 업로드시 무조건 method=post로 넣어줘야함 -->
+    <form action="addBoard.do" method="post" enctype="multipart/form-data">
+        <table class="table">
             <tr>
                 <th>제목</th>
                 <td><input type="text" name="title"></td>
@@ -23,7 +17,12 @@ String logName = (String) session.getAttribute("logName");
             </tr>
             <tr>
                 <th>작성자</th>
-                <td><input type="text" name="writer" value="<%=logName%>"></td>
+                <td><input type="text" name="writer" readonly value="${logName}"></td>
+            </tr>
+            <tr>
+            <!-- 이미지 업로드 용 -->
+            	<th>파일</th>
+            	<td><input type="file" name="image"></td>
             </tr>
             <tr>
                 <td colspan="2" align="center">
@@ -33,5 +32,4 @@ String logName = (String) session.getAttribute("logName");
             </tr>
         </table>
     </form>
-</body>
-</html>
+<jsp:include page="../layout/foot.jsp"></jsp:include>

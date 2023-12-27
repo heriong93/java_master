@@ -1,17 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../layout/menu.jsp" %>
-<%@ include file="../layout/nav.jsp" %>
-	<%
-		String msg = (String) request.getAttribute("message");
-	%>
-	<!-- 로그인 실패시 보여줄 메세지 -->
-	<%
-	if(msg!= null){
-	%>
-	<p><%=msg %></p>
-	<%} %>
-<form action="login.do">
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
+
+<form action="login.do" method="post">
 <table class="table">
 <tbody>
 <tr>
@@ -30,5 +23,3 @@
 </tbody>
 </table>
 </form>
-<%@ include file="../layout/foot.jsp" %>
-</html>

@@ -16,8 +16,8 @@
   </select>
   <!-- 추가 -->
   <insert id="insertBoard" parameterType="board">
-  	insert into board(board_no,title,writer,content)
-	values (board_seq.nextval,#{title},#{writer},#{content})
+  	insert into board(board_no,title,writer,content,image)
+	values (board_seq.nextval,#{title},#{writer},#{content},#{image})
   </insert>
   <!-- 수정 -->
   <update id="updateBoard" parameterType="board">

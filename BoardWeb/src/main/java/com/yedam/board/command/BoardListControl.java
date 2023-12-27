@@ -24,7 +24,7 @@ public class BoardListControl implements Control {
 		req.setAttribute("boardList", list); // 속성 값 추가하는 것
 
 		// 페이지 이동(foward)
-		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/board/boardList.jsp"); // 이동할 페이지
+		RequestDispatcher rd = req.getRequestDispatcher("board/boardList.tiles"); // 이동할 페이지 tiles.xml에 먼저 지정해줘야함
 		try {
 			rd.forward(req, resp);
 		} catch (ServletException | IOException e) {
