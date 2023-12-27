@@ -31,9 +31,9 @@ public class AddBoardControl implements Control {
 			vo.setContent(content);
 			vo.setWriter(writer);
 
-		} else if (req.getMethod().equals("POST")) {
+		} else if (req.getMethod().equals("POST")) {  //method="post"넣어준 부분은 addBoardForm.jsp에 있음
 			// 파일 업로드 포함
-			String saveLoc = req.getServletContext().getRealPath("images"); // images폴더의 경로를 찾아 업로드 하겠습니다
+			String saveLoc = req.getServletContext().getRealPath("images"); // images폴더의 경로를 찾아 업로드 하겠습니다.폴더 위치에 없어서 만들어줌
 			int maxSize = 1024 * 1024 * 5;
 			MultipartRequest mr = null;
 			// mr= 속성들 1.request 2.saveLoc 3.maxSize 4.인코딩 방식 5.중복이 있을 시 리네임 정책
