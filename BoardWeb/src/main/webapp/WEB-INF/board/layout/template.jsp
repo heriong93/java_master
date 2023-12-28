@@ -17,7 +17,7 @@
     <body>
   
         <div class="d-flex" id="wrapper">
-            <!-- Sidebar menu.jsp로 만들것임 -->
+            <!-- Sidebar menu.jsp로 만들것임 tiles.xml 보면 name-"menu" 설정해놓음-->
             <tiles:insertAttribute name="menu"/>
             <!-- Page content wrapper-->
             <div id="page-content-wrapper">

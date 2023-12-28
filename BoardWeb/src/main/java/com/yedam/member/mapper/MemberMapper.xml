@@ -10,4 +10,13 @@
   <select id="selectMember" resultType="member">   
     select * from member where id=#{id} and pw=#{pw} 
   </select>
+  <!-- 목록조회 -->
+  <select id="selectList" resultType="member">   
+    select * from member order by 1 
+  </select>
+  <!-- 단건조회 -->
+  <select id="selectOne" resultType="member" parameterType="String">
+  	select * from member where id=#{id}
+  </select>
+  
 </mapper>

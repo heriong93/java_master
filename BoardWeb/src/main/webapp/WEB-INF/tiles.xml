@@ -16,6 +16,15 @@
   <put-attribute name="body" value="/student/{1}.jsp"></put-attribute>
   </definition>
   
+  <definition name="myadmin" template="/WEB-INF/admin/template.jsp">
+  	<put-attribute name="nav" value="/WEB-INF/admin/nav.jsp"/>
+  	<put-attribute name="menu" value="/WEB-INF/admin/menu.jsp"/>
+  	<put-attribute name="body" value="/WEB-INF/admin/body.jsp"/>
+  </definition>
+  <definition name="WILDCARD:admin/*" extends="myadmin">
+  	<put-attribute name="body" value="/WEB-INF/member/{1}.jsp"/>
+  </definition>
+  <!-- layout은 아래 템플릿을 참조하지만, 바디 부분만 아래 와일드카드로 적용시킴 -->
   <definition name="myhomepage" template="/WEB-INF/board/layout/template.jsp">
   <put-attribute name="menu" value="/WEB-INF/board/layout/menu.jsp"/>
   <put-attribute name="nav" value="/WEB-INF/board/layout/nav.jsp"/>
@@ -25,6 +34,7 @@
   <definition name="WILDCARD:*/*" extends="myhomepage">
   <put-attribute name="body" value="/WEB-INF/{1}/{2}.jsp"/>
   </definition>
+
   
   
 </tiles-definitions>

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import com.yedam.common.Control;
 import com.yedam.member.service.MemberService;
 import com.yedam.member.serviceImpl.MemberServiceImpl;
+import com.yedam.member.serviceImpl.MemberServiceImpl;
 import com.yedam.member.vo.MemberVO;
 
 public class LoginControl implements Control {
@@ -29,6 +30,8 @@ public class LoginControl implements Control {
 			HttpSession session = req.getSession();  
 			session.setAttribute("logId",vo.getId());  //로그인 아이디값을 생성된 session객체에 담음 
 			session.setAttribute("logName", vo.getName()); //
+			//권한 세션에 지정 
+			session.setAttribute("responsibility", vo.getResponsibility()); //사용자의 권한 구분 user/admin
 			try {
 				resp.sendRedirect("boardList.do"); 
 			} catch (IOException e) {
