@@ -4,6 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+<<<<<<< HEAD
   <settings>
     <setting name="mapUnderscoreToCamelCase" value="true"/>
     <setting name="jdbcTypeForNull" value="NULL"/>
@@ -28,4 +29,31 @@
   <mappers>
   <mapper resource="com/yedam/product/mapper/ProductMapper.xml"/>
   </mappers>
+=======
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="product" type="com.yedam.product.vo.ProductVO"/>
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.OracleDriver"/>
+				<property name="url"
+					value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="dev" />
+				<property name="password" value="dev" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="com/yedam/product/mapper/ProductMapper.xml"/>
+	</mappers>
+>>>>>>> branch 'master' of https://github.com/heriong93/java_master.git
 </configuration>

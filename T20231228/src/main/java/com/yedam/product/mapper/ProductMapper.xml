@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<<<<<<< HEAD
 <mapper namespace="com/yedam/product/mapper/ProductMapper">
 	<select id="selectList" resultType="product">
 		select * from product order by 1
@@ -12,4 +13,21 @@
 		select * from product where product_code = #{pno}
 	</select>
   
+=======
+<mapper namespace="com.yedam.product.mapper.ProductMapper">
+	<!-- 목록 -->
+	<select id="selectList" resultType="product">
+		select * from product order
+		by 1
+	</select>
+	<!-- 단건조회 -->
+	<select id="getProduct" resultType="product"
+		parameterType="string">
+		select * from product where product_code=#{pno}
+	</select>
+ <!-- 좋아요 -->
+	<select id="listLikeIt" resultType="product">
+		select * from product order by like_it desc
+	</select>
+>>>>>>> branch 'master' of https://github.com/heriong93/java_master.git
 </mapper>

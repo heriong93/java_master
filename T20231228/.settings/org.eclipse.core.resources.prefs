@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding/<project>=UTF-8
+=======
+encoding//src/main/webapp/WEB-INF/tiles.xml=UTF-8
+>>>>>>> branch 'master' of https://github.com/heriong93/java_master.git

@@ -22,5 +22,12 @@ public class ProductServiceImpl implements ProductService {
 	public ProductVO getProduct(String pno) {
 		return mapper.getProduct(pno);
 	}
+<<<<<<< HEAD
+=======
+	@Override
+	public List<ProductVO> listLikeit() {
+		return mapper.listLikeIt();
+	}
+>>>>>>> branch 'master' of https://github.com/heriong93/java_master.git
 	
 }

@@ -14,5 +14,8 @@
 		<put-attribute name="body" value="/WEB-INF/product/{1}.jsp" />
 	</definition>
 	
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/heriong93/java_master.git
 </tiles-definitions>

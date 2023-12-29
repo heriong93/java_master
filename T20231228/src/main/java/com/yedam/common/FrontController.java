@@ -25,9 +25,14 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 
 		// 상품컨트롤.
+<<<<<<< HEAD
 		map.put("/productList.do", new ProductListControl());  //목록
 		map.put("/getProduct.do", new ProductInfoControl());
 		
+=======
+		map.put("/productList.do", new ProductListControl());
+		map.put("/productInfo.do", new ProductInfoControl());
+>>>>>>> branch 'master' of https://github.com/heriong93/java_master.git
 	}
 
 	@Override

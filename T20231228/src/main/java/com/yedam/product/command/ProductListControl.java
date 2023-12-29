@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD
 import com.yedam.board.service.BoardService;
 import com.yedam.board.serviceImpl.BoardServiceMybatis;
 import com.yedam.board.vo.BoardVO;
@@ -36,3 +37,29 @@ public class ProductListControl implements Control {
 
 	}
 
+=======
+import com.yedam.common.Control;
+import com.yedam.product.service.ProductService;
+import com.yedam.product.serviceImpl.ProductServiceImpl;
+import com.yedam.product.vo.ProductVO;
+
+public class ProductListControl implements Control {
+
+	@Override
+	public void execute(HttpServletRequest req, HttpServletResponse resp) {
+		
+		ProductService svc = new ProductServiceImpl();
+		List<ProductVO> list = svc.productList();
+		
+		req.setAttribute("productList", list);
+		
+		RequestDispatcher rd = req.getRequestDispatcher("product/productList.tiles");
+		try {
+			rd.forward(req, resp);
+		} catch (ServletException | IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
+>>>>>>> branch 'master' of https://github.com/heriong93/java_master.git
