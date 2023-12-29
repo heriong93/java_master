@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom01.html</title>
+</head>
+<body>
+    <!-- html 표-->
+    <!-- 
+        <table>
+        <thead>
+            <tr>
+                <th>아이디</th>
+                <th>이름</th>
+                <th>전화번호</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>suser1</td>
+                <td>홍길동</td>
+                <td>010-1111</td>
+            </tr>
+        </tbody>
+    </table> 
+-->
+
+    <script>
+
+    // <ul>
+    //     <li>apple</li>
+    //     <li>banana</li>
+    // </ul>
+    //dom으로 위에 있는 내용 만들기
+        const fruits = ['apple','banana']; //new Array()
+        let bdy = document.querySelector('body'); //그냥 태그명 body로 적어도 가능
+
+        let ul= document.createElement('ul'); //ul createElement로 만들고 
+        //배열  for..of..
+        for(let fruit of fruits){
+            let li1= document.createElement('li');
+            li1.innerText = fruit;  
+            ul.appendChild(li1); 
+        } //이걸로 반복해주면 아래의 내용이 필요업승ㅁ 
+        // let li1= document.createElement('li');//li도 만들어 
+        // li1.innerText = 'apple';  //innerText속성에 값을 담아
+        // ul.appendChild(li1); //자식요소 li1을 부모요소 ul에 붙이겠다 
+
+        // let li2= document.createElement('li');
+        // li2.innerText = 'banana';
+        // ul.appendChild(li2);
+        
+        console.log(ul);
+        bdy.appendChild(ul);
+
+
+    //     <table>
+    //     <thead>
+    //         <tr>
+    //             <th>아이디</th>
+    //             <th>이름</th>
+    //             <th>전화번호</th>
+    //         </tr>
+    //     </thead>
+    //     <tbody>
+    //         <tr>
+    //             <td>suser1</td>
+    //             <td>홍길동</td>
+    //             <td>010-1111</td>
+    //         </tr>
+    //     </tbody>
+    // </table> 
+
+        let tab = document.createElement('table');
+
+
+        const inf = ['아이디','이름','전화번호']; //new Array()
+
+        let th = document.createElement('thead');
+        let tr1 = document.createElement ('tr');
+        th.appendChild(tr1);
+        //배열  for..of..
+        for(let userinfo of inf){
+            let th1 = document.createElement('li');
+        th1.innerText = userinfo;
+        tr1.appendChild(th1);
+        }
+
+        console.log(ul);
+        th.appendChild(tr1);
+
+
+        
+
+        let th1 = document.createElement('li');
+        th1.innerText = '아이디';
+        tr1.appendChild(th1);
+
+        let th2 = document.createElement('li');
+        th2.innerText = '이름';
+        tr1.appendChild(th2);
+
+        let th3 = document.createElement('li');
+        th3.innerText = '전화번호';
+        tr1.appendChild(th3);
+
+
+
+        const userinf = ['user1','홍길동','010-111']; //new Array()
+
+        let bdy1 = document.createElement('tbody'); 
+        let tr2= document.createElement('tr'); 
+        bdy1.appendChild(tr2);
+        //배열  for..of..
+        for(let userin of userinf){
+            let td1= document.createElement('td');
+        td1.innerText = userin; 
+        tr2.appendChild(td1);  
+        }
+
+        console.log(ul);
+        th.appendChild(tr2);
+
+
+        // let bdy1 = document.createElement('tbody'); 
+        
+        // let tr2= document.createElement('tr'); 
+        // bdy1.appendChild(tr2);
+
+        // let td1= document.createElement('td');
+        // td1.innerText = 'user1'; 
+        // tr2.appendChild(td1);  
+
+        // let td2= document.createElement('td');
+        // td2.innerText = '홍길동';
+        // tr2.appendChild(td2);
+        
+        // let td3= document.createElement('td');
+        // td3.innerText = '010-1111';
+        // tr2.appendChild(td3);
+
+        // console.log(tr2);
+
+        // tab.appendChild(th);
+        // tab.appendChild(bdy1);
+        // bdy.appendChild(tab);
+
+
+
+
+
+
+
+
+        console.log(window);
+        let btn = document.createElement('button'); //출력 위해 버튼에 요소를 담는다 (button값을 넣기)
+        btn.innerText = 'Btn'; //속성에 버튼을 
+        btn.addEventListener('click',function(){  //addEventListener 메소드/함수= click 이 발생시 다음의 펑션을 실행해라 
+            window.alert('Click 됨.');
+        })   
+        console.log(btn);
+
+        document.querySelector('body').appendChild(btn); //바디 태그 하위 요소로 버튼을 넣어주겠다(appendChild) 
+
+
+    </script>
+</body>
+</html>
