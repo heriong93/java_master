@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo/20231229.html</title>
+    <style>
+        #show{
+            width: 500px;
+            height: 400px;
+            background-color: rgb(162, 176, 189);
+
+        }
+        span{
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            margin: 5px;
+          
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="userValue" id="userValue">
+    <button id="delBtn">삭제</button>
+    <div id="show">
+        <!-- <span>Lorem</span>
+        <span>ipsum,</span> -->
+
+
+    </div> 
+    <script>
+const words = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, consequuntur excepturi est consectetur vitae labore totam facilis nesciunt nemo, debitis laboriosam eligendi, iure voluptates libero culpa quas ipsa quidem! Eligendi.';
+
+const wordAry = words.split(' ');
+
+
+// 배열에 값 담기 
+//혜령 풀이법
+// for (each in wordAry){
+//     let word = document.createElement('span');
+//     word.innerText = wordAry[each];
+//     console.log(word);
+//     document.querySelector('#show').appendChild(word);
+// }
+
+//교수님 풀이법
+wordAry.forEach(function (word){
+    let span = document.createElement('span');
+    span.innerText = word;
+    show.appendChild(span);
+})
+
+//삭제 기능 추가  id=delBtn에 클릭 
+document.getElementById('delBtn').addEventListener('click',function(){
+    //사용자의 입력값 == 화면상에 span요소를 가져와서 span.remove();
+    //userinput = document의 name 이 userValue인 것들의 value 
+    let userInput = document.querySelector('input[name=userValue]').value ;
+    //span 전체선택 
+    let spanAll = document.querySelectorAll('span');
+    console.log(spanAll);
+    for(let item of spanAll){
+        if( item.innerText == userInput){
+            item.remove()
+        }
+    }
+    //사용자 입력화면 초기화 
+    document.querySelector('input[name=userValue]').value = ''; 
+    });
+
+
+   
+    </script>
+</body>
+</html>
