@@ -15,4 +15,4 @@ console.log(word.replace(/xx/g,' ').replace(/x/g,''));
 
 
 
-
+console.log("git 추가 연습")
