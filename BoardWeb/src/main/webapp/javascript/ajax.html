@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax.html</title>
+</head>
+<body>
+    <table border="1">
+        <thead id="thead">
+        <tr>
+            <th>아이디</th>
+            <th>이름</th>
+            <th>이메일</th>
+        </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+    </table>
+    <script>
+        const fields = ['id', 'first_name', 'email'];
+        const xhtp = new XMLHttpRequest(); //비동기 방식으로 데이터 생성 및 
+        xhtp.open('get','dataset.xml'); //서버에 요청할 페이지 
+        xhtp.send(); //send로 요청해야 페이지 열림
+
+        xhtp.onload = function (){
+            let doc = xhtp.responseXML;
+            doc.querySelectorAll('record').forEach(record =>{
+                console.log(record.children[0].innerHTML); //xml은 innerText  사용이 안됨. 그래서 innerHTML로 사용 
+            }) //xml파일의 모든 <record>을 불러오기 
+        }
+        
+        
+        
+        function makeJson () {  //load 이벤트(페이지를 받아온 시점에) 발생할 경우 
+           let data = JSON.parse(xhtp.responseText); //json파일을 자바스크립트에서 사용하기 편한 객체형태로 바꿔줌
+            console.log(data); //서버에 있는 텍스트 받아옴
+            let tbody = document.querySelector('#tbody');
+            data.forEach(item => {
+                let tr = document.createElement('tr');
+                fields.forEach(field => {
+                    let td = document.createElement('td');
+                    td.innerText=item[field];
+                    tr.appendChild(td);
+                })
+                tbody.appendChild(tr);
+            })
+        }
+    </script>
+</body>
+</html>

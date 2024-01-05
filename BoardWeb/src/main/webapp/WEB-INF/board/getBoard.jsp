@@ -58,12 +58,64 @@
 	</table>
 </form>
 <br>
+댓글내용: <input type="text" id="content"><button id="addReply">등록</button>
+<p />
+<p>댓글목록</p>
+<div id="show">
+	<ul id="list" style="list-style: none;"></ul>
+</div>
+
 <a href="boardList.do">글 목록으로</a>
+<script src="js/service.js"></script>
 <script>
+
 	function deleteFun() {
 		console.log(window);
 		document.forms.myForm.action = "removeForm.do";
 		document.forms.myForm.submit();
 	}
+	
+	const bno = '${vo.boardNo}';
+	let ul = document.querySelector('#list');
+	//Ajax호출
+	//순서 7 - 댓글 출력 기능 생성 
+	const xhtp = new XMLHttpRequest();
+	xhtp.open('get','replyListJson.do?bno='+bno);
+	xhtp.send();
+	xhtp.onload = function(){
+		let data = JSON.parse(xhtp.responseText); //문자가 html포맷을 가지게 됨 json 문자열 -> 객체 
+		data.forEach(reply => {
+			let li = makeLi(reply);
+			//makeLi() 함수 -> js/service.js에 스크립트 있음
+			ul.appendChild(li);
+		})
+	}
+	//등록버튼 
+	let addbtn = document.querySelector('#addReply');
+	addbtn.addEventListener('click',function(){
+		let reply = document.querySelector('#content').value;
+		let replyer= '${logId}';   //loginControl.java에 나온 값  
+		
+		const addAjax = new XMLHttpRequest();
+		//frontcontroller 에 AddReplyJson.do 만들기 
+		addAjax.open('get','AddReplyJson.do?reply='+reply+'&replyer='+replyer+'&bno='+bno);
+		addAjax.send();
+		addAjax.onload = function(){
+			
+			let result = JSON.parse(addAjax.responseText);
+			if(result.retCode == 'OK'){
+				let reply= result.vo;
+				let li = makeLi(reply);
+				//makeLi() 함수 -> js/service.js에 스크립트 있음
+				ul.appendChild(li); 
+				
+				document.querySelector('#content').value = '';
+			}else if(result.retCode == 'NG'){
+				alert('처리 중 에러');
+			}
+		console.log();
+			
+		}
+	})
 </script>
 <jsp:include page="../layout/foot.jsp"></jsp:include>

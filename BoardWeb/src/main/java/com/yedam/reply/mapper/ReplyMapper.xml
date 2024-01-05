@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <!-- mybatis-config.xml 에서 typealias, mapper 추가해주기  -->
+  <!-- ReplyMapper.java에 있는 생성자이름으로 id지정해줌.같이 참조해서 바교해 보기   -->
+<mapper namespace="com.yedam.reply.mapper.ReplyMapper">
+<!-- 목록 -->
+  <select id="replyList" resultType="reply">   
+    select r.*, m.name 
+    from reply r
+    join member m
+    on r.replyer = m.id
+    where board_no = #{boardNo} order by 1
+  </select>
+  <!-- 페이징 -->
+  <select id="replyListPaging" resultType="reply">
+  select b.* from 
+(select rownum rn, a.*  from 
+(select r.*, m.name name
+    from reply r
+    join member m
+    on r.replyer = m.id
+    where board_no = #{boardNo}
+    order by 1
+    ) a ) b
+    <![CDATA[
+    where b.rn > (#{page}-1) and b.rn <= #{page}*5
+    ]]>   <!-- <인식오류때문에 CDATA에 넣어줌 -->
+  </select>
+  <!-- 댓글 삭제 -->
+  <delete id="deleteReply" parameterType="int">
+  	delete from reply where reply_no = #{replyNo}
+  </delete>
+  <!-- 댓글 등록 seq.nextval을 ${replyNo}에 order=before 쿼리 실행하기 전에 값을 넣어주겠다 -->
+  <insert id="insertReply" parameterType="reply">
+  <selectKey keyProperty="replyNo" resultType="int" order="BEFORE">
+  	select reply_seq.nextval from dual
+  </selectKey>
+  	INSERT INTO reply VALUES (#{replyNo},#{boardNo},#{reply},#{replyer}, sysdate)
+  </insert>
+  
+  <select id="selectReply" resultType="reply" parameterType="int">
+  select r.*, m.name 
+    from reply r
+    join member m
+    on r.replyer = m.id
+    where reply_no = #{replyNo} order by 1
+  </select>
+  
+</mapper>
