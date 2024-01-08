@@ -26,7 +26,12 @@ import com.yedam.member.command.LoginFormControl;
 import com.yedam.member.command.LogoutControl;
 import com.yedam.member.command.RemoveMemberControl;
 import com.yedam.reply.command.AddReplyJson;
+import com.yedam.reply.command.ChartForm;
+import com.yedam.reply.command.Covid19Form;
 import com.yedam.reply.command.DelReplyJson;
+import com.yedam.reply.command.MapForm;
+import com.yedam.reply.command.PagingListJson;
+import com.yedam.reply.command.ReplyCountJson;
 import com.yedam.reply.command.ReplyListJson;
 import com.yedam.student.command.MemberListControl;
 import com.yedam.student.command.StudentInfoCont;
@@ -75,8 +80,18 @@ public class FrontController extends HttpServlet{
 		map.put("/replyListJson.do", new ReplyListJson());
 		map.put("/delReply.do", new DelReplyJson());
 		map.put("/AddReplyJson.do", new AddReplyJson());
+		//페이지 생성하기 위한 json 
+		map.put("/pagingListJson.do", new PagingListJson());
 		
+		//chart 관련 
+		map.put("/chart.do", new ChartForm()); //차트 출력
+		map.put("/replyCountJson.do", new ReplyCountJson());
 		
+		//코로나19관련
+		map.put("/covid19.do", new Covid19Form());
+		
+		//지도 관련 지도api
+		map.put("/map.do", new MapForm());
 		
 		
 	}

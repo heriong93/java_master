@@ -28,7 +28,9 @@ function makeLi(reply = {}) {
 					let result = JSON.parse(delHtp.responseText)
 					if(result.retCode == 'OK'){
 						alert('삭제됨');
-						btn.parentElement.remove();
+						//btn.parentElement.remove(); 댓글만 삭제되고 페이지는 새로 고쳐지지 않음. 
+						//bno, page => 페이지리스트, 페이징리스트 로 새로고침될 수 있도록 다시 기능 만들어줌
+						showList(pageInfo);
 					}else if(result.retCode == 'NG'){
 						alert('처리중 에러');
 					}
@@ -40,4 +42,4 @@ function makeLi(reply = {}) {
 			
 			return li;
 			
-}
+}//end of function makeLi()

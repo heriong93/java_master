@@ -1,5 +1,6 @@
 package com.yedam.reply.mapper;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
@@ -15,7 +16,10 @@ public interface ReplyMapper {
 	int deleteReply(int replyNo); //댓글삭제
 	int insertReply(ReplyVO vo); //댓글 등록 
 	ReplyVO selectReply(int replyNo);
-	
+	//페이지 계산하기 위한 전체건수 반환 
+	int selectCount(int boardNo);
+	//차트 데이터 (댓글자와 작성 건수)
+	List<HashMap<String,Object>> selectReplyCnt();
 	
 	
 	
