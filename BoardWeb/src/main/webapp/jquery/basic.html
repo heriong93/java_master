@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>basic.html</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> <!-- 직접 jquery에서 코드 복사해와도 됨 -->
+<script>
+	//javascript 객체(속성,메소드) vs jquery 객체(메소드 기반) 
+	$(document).ready(function(){ //document가 다 다운로드 되면 함수의 내용을 실행하세요 
+	const obj= {}
+	//$("선택자"); <--jquery 객체 
+	
+	//jquery (https://tcpschool.com/jquery) 참조하기
+	 let ul = $('<ul />').append($('<li />').text('Apple'), //<00 /> <- 열고닫고를 한번에 한 것
+								$('<li />').text('Banana')
+								);
+	ul.attr('class','parent'); //ul class 에 parent라고 지정
+	console.log(ul);
+		$('#show').append(ul); 
+		
+		//javascript
+		let body= document.querySelector('#dom');
+		let ulj = document.createElement('ul');
+		
+		let li = document.createElement('li');
+		li.innerText='Apple';
+		ulj.appendChild(li);
+		
+		let li2 = document.createElement('li');
+		li2.innerText='Banana';
+		ulj.appendChild(li2);
+		
+		body.appendChild(ulj);
+		
+		//jquery : onclick:$(객체).on('이벤트유형','실행함수')
+		$('#show li').on('mouseover',function(){
+			$(this).css('background','lightyellow');
+			console.log($(this));
+		})
+		$('#show li').on('mouseout',function(){  //mouseout인경우 
+			$(this).css('background',''); //background color 없애겠다 
+			console.log($(this));
+		})
+	}); 
+	
+</script>
+</head>
+<body>
+	<div id="show"></div>
+	<div id="dom"></div>
+</body>
+</html>

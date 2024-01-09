@@ -17,11 +17,26 @@ function makeLi(reply = {}) {
 			li.appendChild(span);
 			
 			//삭제버튼 
-			let btn = document.createElement('button');
-			btn.addEventListener('click',function(){
 				//댓글번호 db에서 삭제 후, 화면에서도 제거해야함  
 				//순서 8 -frontcontroller에서 기능 등록 후 delReplyJson 클래스파일 생성 
-				let delHtp= new XMLHttpRequest();
+			let btn = document.createElement('button');
+			btn.addEventListener('click',async function(){
+				//삭제기능 fetch 로 변경 
+				const promise = await fetch('delReply.do?rno='+reply.replyNo);
+				const json = await promise.json();
+				try{
+					if(json.retCode == 'OK'){
+						alert('삭제됨');
+						showList(pageInfo);
+					}else if(json.retCode == 'NG'){
+						alert('처리중 에러');
+					}
+				}catch(err){
+					console.error('예외:=>',err);
+				} 
+			}, true); //end of async function
+					
+				/*let delHtp= new XMLHttpRequest();
 				delHtp.open('get','delReply.do?rno='+reply.replyNo);
 				delHtp.send()
 				delHtp.onload = function(){
@@ -34,8 +49,7 @@ function makeLi(reply = {}) {
 					}else if(result.retCode == 'NG'){
 						alert('처리중 에러');
 					}
-				}
-			})
+				}*/
 			btn.innerText = '삭제';
 			li.appendChild(btn);
 			//end 함수생성 

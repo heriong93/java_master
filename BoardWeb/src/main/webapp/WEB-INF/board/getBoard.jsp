@@ -131,7 +131,7 @@
 	}
 	//Ajax호출- 페이지 목록 그려주는 기능 
 	//순서 7 - 댓글 출력 기능 생성 
-	function showList(page){
+	function showList_backup(page){
 		ul.innerHTML = '';
 	const xhtp = new XMLHttpRequest();
 	xhtp.open('get','replyListJson.do?bno='+bno+ "&page="+page); //열어주는 댓글창 페이지 
@@ -144,7 +144,21 @@
 			ul.appendChild(li);
 		})
 	  }
-	}//end of function showList() -목록 보여주기
+	}//end of function showList() 
+	
+	//위의 내용을 promise로 대체하기 
+	function showList(page){
+		ul.innerHTML = '';
+		fetch('replyListJson.do?bno='+bno+ "&page="+page) //get 방식이라 방식은 안적어줘도 되고 url만 기재하면 됨 
+		.then(str => str.json())
+		.then(result => {
+			result.forEach(reply=> {
+				let li = makeLi(reply);
+				ul.appendChild(li);
+			})
+		})
+		.catch(reject => console.log(reject));
+	}
 	showList(pageInfo);
 	
 	//페이지 생성 
@@ -154,7 +168,6 @@
 	
 	function pagingList(page = 1){
 		paging.innerHTML = '';
-		
 		let pagingAjax = new XMLHttpRequest();
 		pagingAjax.open('get','pagingListJson.do?bno='+bno+"&page="+page);
 		pagingAjax.send();
@@ -199,27 +212,52 @@
 		let reply = document.querySelector('#content').value;
 		let replyer= '${logId}';   //loginControl.java에 나온 값  
 		
-		const addAjax = new XMLHttpRequest();
+		//아래 내용 fetch 함수로 변경 
+		fetch('AddReplyJson.do',{  //url.object 
+			method: 'post', //post type일 경우 headers, body 필요 
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+			},
+			body: 'reply='+reply+'&replyer='+replyer+'&bno='+bno //addAjax.send(에 들어가는것이 body)
+		})
+		.then(str => str.json())
+		.then(result => {
+			console.log(result)
+		if(result.retCode == 'OK'){
+			alert('등록됨');
+			pageInfo= 1;
+			showList(pageInfo);
+			pagingList();
+			
+			document.querySelector('#content').value = '';
+		}else if(result.retCode == 'NG'){
+			alert('처리 중 에러');
+		}
+		})
+		.catch(err => console.error(err));
+	})
+		
+	/*	const addAjax = new XMLHttpRequest();
 		//frontcontroller 에 AddReplyJson.do 만들기 
-		addAjax.open('get','AddReplyJson.do?reply='+reply+'&replyer='+replyer+'&bno='+bno);
-		addAjax.send();
+		addAjax.open('post','AddReplyJson.do');
+		addAjax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		addAjax.send('reply='+reply+'&replyer='+replyer+'&bno='+bno);
 		addAjax.onload = function(){
 			
 			let result = JSON.parse(addAjax.responseText);
 			if(result.retCode == 'OK'){
+				alert('등록됨');
+				pageInfo= 1;
 				//let reply= result.vo;
 				//let li = makeLi(reply);
 				//makeLi() 함수 -> js/service.js에 스크립트 있음
 				//ul.appendChild(li); 
 				showList(pageInfo);
-				
+				pagingList();
 				document.querySelector('#content').value = '';
 			}else if(result.retCode == 'NG'){
 				alert('처리 중 에러');
 			}
-		console.log();
-			
-		}
-	})
+		}//end of onload */
 </script>
 <jsp:include page="../layout/foot.jsp"></jsp:include>
