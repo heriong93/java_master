@@ -8,7 +8,7 @@
         #show{
             width: 300px;
             height: 250px;
-            background-color: aliceblue;
+            background-color: rgb(162, 176, 189);
 
         }
         span{
@@ -20,19 +20,37 @@
     </style>
 </head>
 <body>
-    
+<!--     
     <div id="show">
         <span>Lorem</span>
         <span>ipsum,</span>
 
 
-    </div>
+    </div> -->
     <script>
 const words = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, consequuntur excepturi est consectetur vitae labore totam facilis nesciunt nemo, debitis laboriosam eligendi, iure voluptates libero culpa quas ipsa quidem! Eligendi.';
-    
+
 const wordAry = words.split(' ');
 
-       
+
+//body 만들기 
+let bd = document.querySelector('body');
+//div id 설정 
+let div = document.createElement('division');
+
+div.setAttribute('id','show');
+
+// 배열에 값 담기 
+
+for (each in wordAry){
+    let word = document.createElement('span');
+    word.innerText = wordAry[each];
+    console.log(word);
+    div.appendChild(word);
+}
+bd.appendChild(div);
+console.log(document.getElementById('show'));  
+
     </script>
 </body>
 </html>

@@ -33,16 +33,19 @@
     //     <li>banana</li>
     // </ul>
     //dom으로 위에 있는 내용 만들기
-        const fruits = ['apple','banana']; //new Array()
-        let bdy = document.querySelector('body'); //그냥 태그명 body로 적어도 가능
+    //-------
+        // const fruits = ['apple','banana']; //new Array()
+        // let bdy = document.querySelector('body'); //그냥 태그명 body로 적어도 가능
 
-        let ul= document.createElement('ul'); //ul createElement로 만들고 
-        //배열  for..of..
-        for(let fruit of fruits){
-            let li1= document.createElement('li');
-            li1.innerText = fruit;  
-            ul.appendChild(li1); 
-        } //이걸로 반복해주면 아래의 내용이 필요업승ㅁ 
+        // let ul= document.createElement('ul'); //ul createElement로 만들고 
+        // //배열  for..of..
+        // for(let fruit of fruits){
+        //     let li1= document.createElement('li');
+        //     li1.innerText = fruit;  
+        //     ul.appendChild(li1); 
+        // } //이걸로 반복해주면 아래의 내용이 필요업승ㅁ 
+
+            //-------
         // let li1= document.createElement('li');//li도 만들어 
         // li1.innerText = 'apple';  //innerText속성에 값을 담아
         // ul.appendChild(li1); //자식요소 li1을 부모요소 ul에 붙이겠다 
@@ -51,8 +54,8 @@
         // li2.innerText = 'banana';
         // ul.appendChild(li2);
         
-        console.log(ul);
-        bdy.appendChild(ul);
+        // console.log(ul);
+        // bdy.appendChild(ul);
 
 
     //     <table>
@@ -77,33 +80,22 @@
 
         const inf = ['아이디','이름','전화번호']; //new Array()
 
-        let th = document.createElement('thead');
+        let thead = document.createElement('thead');
+        
         let tr1 = document.createElement ('tr');
-        th.appendChild(tr1);
+
         //배열  for..of..
         for(let userinfo of inf){
-            let th1 = document.createElement('li');
+            let th1 = document.createElement('th');
         th1.innerText = userinfo;
         tr1.appendChild(th1);
         }
 
-        console.log(ul);
-        th.appendChild(tr1);
-
+        console.log(tr1);
+        thead.appendChild(tr1);
+        tab.appendChild(thead);
 
         
-
-        let th1 = document.createElement('li');
-        th1.innerText = '아이디';
-        tr1.appendChild(th1);
-
-        let th2 = document.createElement('li');
-        th2.innerText = '이름';
-        tr1.appendChild(th2);
-
-        let th3 = document.createElement('li');
-        th3.innerText = '전화번호';
-        tr1.appendChild(th3);
 
 
 
@@ -119,8 +111,9 @@
         tr2.appendChild(td1);  
         }
 
-        console.log(ul);
-        th.appendChild(tr2);
+        console.log(tr2);
+        bdy1.appendChild(tr2);
+        tab.appendChild(bdy1);
 
 
         // let bdy1 = document.createElement('tbody'); 
@@ -154,6 +147,7 @@
 
 
         console.log(window);
+        
         let btn = document.createElement('button'); //출력 위해 버튼에 요소를 담는다 (button값을 넣기)
         btn.innerText = 'Btn'; //속성에 버튼을 
         btn.addEventListener('click',function(){  //addEventListener 메소드/함수= click 이 발생시 다음의 펑션을 실행해라 

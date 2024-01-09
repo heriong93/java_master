@@ -22,18 +22,19 @@
 				
 				$('#list').append(template);
 				//입력항목 초기화
-				$('input[name]').val('');
+				$('input[name="memberId').val('');
 			})//addBtn
 			
-			$('delSelected').on('click',function(){
+			$('#delSelected').on('click',function(){
 				$(':checked').parentsUntil('tbody').remove();
 			})
 				
-				$('checkbox:first').on('click',function(){
-					
-					$(':checked').parentsUntil('tbody').remove();
-				})
-        })
+				$('#selectAll').click(function(){
+					if($('#selectAll').is(":checked")) 
+					$("input[type=checkbox]").prop("checked", true);
+				else $("input[type=checkbox]").prop("checked", false);
+			})
+				});
     </script>
 </head>
 
@@ -68,7 +69,7 @@
                 <th>회원아이디</th>
                 <th>회원명</th>
                 <th>회원연락처</th>
-                <th><input type="checkbox"></th>
+                <th><input type="checkbox" id="selectAll"></th>
             </tr>
         </thead>
         <tbody id="list">
