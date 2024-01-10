@@ -1,4 +1,4 @@
-let data =`[{"id":1,"first_name":"Delmer","last_name":"Murrthum","email":"dmurrthum0@ovh.net","gender":"Male","salary":5201},
+[{"id":1,"first_name":"Delmer","last_name":"Murrthum","email":"dmurrthum0@ovh.net","gender":"Male","salary":5201},
 {"id":2,"first_name":"Daffi","last_name":"Menault","email":"dmenault1@ask.com","gender":"Female","salary":5959},
 {"id":3,"first_name":"Kellie","last_name":"Stuehmeier","email":"kstuehmeier2@histats.com","gender":"Female","salary":7627},
 {"id":4,"first_name":"Joannes","last_name":"Surmeir","email":"jsurmeir3@redcross.org","gender":"Female","salary":5092},
