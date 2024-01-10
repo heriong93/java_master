@@ -25,15 +25,29 @@
 				$('input[name="memberId').val('');
 			})//addBtn
 			
+			//삭제 
 			$('#delSelected').on('click',function(){
-				$(':checked').parentsUntil('tbody').remove();
+				$('tbody input[type="checkbox"]:checked').parentsUntil('tbody').remove();
 			})
-				
+			
+			//전체선택/해제: 교수님 풀이 
+			
+		/*	$('thead input[type="checkbox"]').on('change',function(){
+				if(this.checked){
+				$("input[type=checkbox]").attr("checked",this.checked);
+				}else{
+					$("input[type=checkbox]").attr("checked",null);
+				}
+			}) */
+			
+			//전체선택/해제: 혜령이 풀이 
+			
 				$('#selectAll').click(function(){
 					if($('#selectAll').is(":checked")) 
 					$("input[type=checkbox]").prop("checked", true);
 				else $("input[type=checkbox]").prop("checked", false);
-			})
+			}) 
+			
 				});
     </script>
 </head>

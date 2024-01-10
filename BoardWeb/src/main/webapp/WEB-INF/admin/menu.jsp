@@ -25,7 +25,9 @@
 				<div class="collapse" id="collapseLayouts"
 					aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 					<nav class="sb-sidenav-menu-nested nav">
-						<a class="nav-link" href="memberList.do">회원 목록</a> <a class="nav-link" href="getMember.do">회원 상세보기</a>
+						<a class="nav-link" href="memberList.do">회원 목록</a> 
+						<a class="nav-link" href="memberListAjax.do">회원 목록(Ajax)</a> 
+						<a class="nav-link" href="getMember.do">회원 상세보기</a>
 					</nav>
 				</div>
 				<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -33,7 +35,7 @@
 					aria-controls="collapsePages">
 					<div class="sb-nav-link-icon">
 						<i class="fas fa-book-open"></i>
-					</div> Pages
+					</div> 회원상세
 					<div class="sb-sidenav-collapse-arrow">
 						<i class="fas fa-angle-down"></i>
 					</div>
