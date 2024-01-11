@@ -25,7 +25,7 @@
         xhtp.onload = function (){
             let doc = xhtp.responseXML;
             doc.querySelectorAll('record').forEach(record =>{
-                console.log(record.children[0].innerHTML); //xml은 innerText  사용이 안됨. 그래서 innerHTML로 사용 
+                console.log(record.children[0].innerHTML); //가져온 record태그의 하위요소 내용 가져오기 // xml은 innerText  사용이 안됨. 그래서 innerHTML로 사용 
             }) //xml파일의 모든 <record>을 불러오기 
         }
         

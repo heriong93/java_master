@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--jquery 사용하려면 script적용시켜야함 . jquery cdn에서 복사 붙이기 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <table border="1">  <!--tr*3>td*3 이렇게 적으면 한번에 만들어짐-->
+        <tr>
+        <td class="goodsname">상품1</td>
+        <td>1000</td>
+        <td><button data-no="g1">주문</button></td>
+    </tr>
+    <tr>
+        <td class="goodsname">상품2</td>
+        <td>2000</td>
+        <td><button data-no="g1">주문</button></td>
+    </tr>
+    <tr>
+        <td class="goodsname">상품3</td>
+        <td>3000</td>
+        <td><button data-no="g1">주문</button></td>
+    </tr>
+</table>
+<script>
+    //jquery는 하나만 선택해줘도 모두 적용됨 
+    $('button').bind("click",function(){
+        console.log(event.target.dataset.no); //javascript
+        console.log($(event.target).data('no')); //jquery
+        console.log(event.target.closest("tr").firstElementChild);
+        console.log($(event.target).closest("tr").children().first().html());
+        console.log($(event.target).closest("tr").find(".goodsname").html()); //중간 선택시 .find("td").eq(1) ->eq로 지정 아님 first/ last로 가능
+
+    })
+</script>
+</body>
+</html>
