@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function bookList(){
+            const url ="http://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=[ttbheriong930016001]&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=json&Version=20131101";
+            fetch(url,{method:'GET',mode:"no-cors"})
+                .then(result => result.text())
+                .then(result => {
+                    console.log(result);
+        });
+    }
+    bookList();
+    </script>
+</body>
+</html>
