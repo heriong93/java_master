@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>바닐라 자바스크립트</h3>
+    <input type="text" id="txt">
+    <button id="btn" type="button">추가</button>
+    <ul id="sel">
+        <li><span class="good">바나나</span>1000</li>
+        <li>사과</li>
+    </ul>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+  <script>
+    //javasript 사용
+    document.querySelector("ul").addEventListener("click",function(){
+
+        if(event.target.nodeName=="LI"){ //className== oo //id == 00 
+            event.target.style.backgroundColor = 'yellow'
+        }
+    })
+
+    //jquery 사용 
+    // $('ul').on("click",".good",function(){  //특정 자식에게만 이벤트 걸어주고 싶을때 
+    //     $(event.target).css("backgroundColor",'yellowgreen');
+    // })
+
+    $("#btn").on("click",function(){
+        let txtValue= $("#txt").val();
+        $("#sel").append($("<li>").text(txtValue));
+    })
+  </script>
+</body>
+</html>

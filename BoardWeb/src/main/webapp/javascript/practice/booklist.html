@@ -4,18 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <script>
-        function bookList(){
-            const url ="http://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=[ttbheriong930016001]&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=json&Version=20131101";
-            fetch(url,{method:'GET',mode:"no-cors"})
-                .then(result => result.text())
-                .then(result => {
-                    console.log(result);
-        });
-    }
-    bookList();
+      $(document).ready(function () {
+            var pageNum = 1;
+ 
+            $("#search").click(function () {
+                $("div").html("");
+ 
+                $.ajax({
+                    method: "GET",
+                    url: "https://dapi.kakao.com/v3/search/book?target=title",
+                    data: { query: $("#query").val(), page: pageNum},
+                    headers: {Authorization: "KakaoAK 886378c51fd0d85c1cb11d9f81955d7f"} // ########부분에 본인의 REST API 키를 넣어주세요.
+ 
+                })
+                .done(function (msg) {
+                    console.log(msg);
+                    for (var i = 0; i < 10; i++){
+                        $("div").append("<h2><a href='"+ msg.documents[i].url +"'>" + msg.documents[i].title + "</a></h2>");
+                        $("div").append("<strong>저자:</strong> " + msg.documents[i].authors + "<br>");
+                        $("div").append("<strong>출판사:</strong> " + msg.documents[i].publisher + "<br>");
+                        $("div").append("<strong>요약:</strong> " + msg.documents[i].contents + "...<br>");
+                        $("div").append("<img src='" + msg.documents[i].thumbnail + "'/><br>");
+                    }
+                });
+            })
+        })
     </script>
+    <input type="text" id="query">
+    <button id="search">검색</button>
+ 
+    <div></div>
 </body>
 </html>
