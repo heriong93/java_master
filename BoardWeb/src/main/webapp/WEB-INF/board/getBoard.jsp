@@ -161,51 +161,8 @@
 	}
 	showList(pageInfo);
 	
-	//페이지 생성 
-	//페이지 계산 
-	let paging = document.querySelector('#paging');
-	pagingList();
 	
-	function pagingList(page = 1){
-		paging.innerHTML = '';
-		let pagingAjax = new XMLHttpRequest();
-		pagingAjax.open('get','pagingListJson.do?bno='+bno+"&page="+page);
-		pagingAjax.send();
-		pagingAjax.onload= function(){
-			let result = JSON.parse(pagingAjax.responseText);
-			//이전
-			//보여지는 페이지 이전의 페이지   -> '이전' 6 7
-			if(result.prev){
-				let aTag = document.createElement('a');
-				aTag.href = result.startPage -1;
-				aTag.innerText = '이전';
-				aTag.addEventListener('click',pageList);
-				paging.appendChild(aTag);
-			}
-			//페이지 목록 
-			for(let p = result.startPage; p <= result.lastPage;p++){
-				let aTag = document.createElement('a');
-				if(p == page){
-					aTag.setAttribute('class','active');
-				}
-				aTag.href = p;
-				aTag.innerText = p;
-				aTag.addEventListener('click',pageList);
-				paging.appendChild(aTag);
-			}
-			//다음
-			//보여지는 페이지 이후의 페이지 1 2 3 4 5 '다음'<--  
-			if(result.next){
-				let aTag = document.createElement('a');
-				aTag.href = result.lastPage +1;
-				aTag.innerText = '다음';
-				aTag.addEventListener('click',pageList);
-				paging.appendChild(aTag);
-				
-			}
-		}
-	}//end of pagingList
-	
+
 	//등록버튼 클릭 이벤트 생성 
 	let addbtn = document.querySelector('#addReply');
 	addbtn.addEventListener('click',function(){

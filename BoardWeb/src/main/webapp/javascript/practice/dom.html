@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="txtFruit">
+    <button id="btnAdd">추가</button>
+    <button id="btnDel">삭제</button>
+    <select id="selFruit" size="10">
+        <option>사과</option>
+    </select>
+  <!--  <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>  아래 jquery쓸려면 이거 있어야함--> 
+    <script>
+        //버튼 클릭 이벤트 
+       /* $('#btnAdd').on('click',function(){
+            let input = $('txtFruit').value
+            console.log(input);
+            document.createElement('option').append(input);
+        }) */
+        //input태그의 값을 option태그로 생성해서 select append 
+        //value, createElement() append() 
+        btnAdd.addEventListener("click",function(){
+           let op = document.createElement("option");
+           op.innerText = txtFruit.value;
+           selFruit.append(op);
+           txtFruit.value="";
+        })
+
+        //글을 쓰고 엔터를 치면 click한 것과 같은 결과를 만들어줌  
+        txtFruit.addEventListener("keypress",function(){
+            if(event.keyCode ==13){
+                btnAdd.click();
+            }
+        })
+
+        btnDel.addEventListener("click",()=>{
+            selFruit.innerHTML = "";
+        })
+       
+        var fruit = {
+            a:()=>{console.log("a")}, //function(){},  같은 표현
+            b: p => p*2,
+            c: function(){console.log("c")},
+            d(){console.log("d")}
+        }
+        var name = 'choi';
+        var age = 20;
+        var emp = {name,age, print(){}}; // 단축어 {name:name, age:age, print:function(){}}
+    </script>
+</body>
+</html>
